@@ -14,9 +14,7 @@ This repository contains hands‑on laboratory work completed as part of the
 
 The labs focus on network reconnaissance, service enumeration, web application security testing, vulnerability assessment, and Bash automation.
 
-This repository is structured to reflect how cybersecurity lab work is
-
-documented, preserved, and reviewed.
+This repository is structured to reflect how cybersecurity lab work is documented, preserved, and reviewed.
 
 ---
 
