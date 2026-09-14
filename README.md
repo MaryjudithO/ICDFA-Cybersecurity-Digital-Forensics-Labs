@@ -58,15 +58,15 @@ Lab01_Network_Reconnaissance_Report_WithScreenshots.docx
 
 ### Lab 02 – Web Application Security Testing
 
-This lab focuses on assessing web application vulnerabilities, examining session cookies, testing file upload validation, performing web scanning, and evaluating SQL injection flaws[cite: 17].
+This lab focuses on assessing web application vulnerabilities, examining session cookies, testing file upload validation, performing web scanning, and evaluating SQL injection flaws.
 
 **Topics covered:**
 
-* HTTP traffic inspection and session cookie analysis with Burp Suite[cite: 17]
-* Testing file upload security controls in DVWA[cite: 17]
-* Server configuration and vulnerability scanning with Nikto[cite: 17]
-* Directory brute-forcing and path discovery using DIRB[cite: 17]
-* Manual and automated SQL injection testing with SQLMap[cite: 17]
+* HTTP traffic inspection and session cookie analysis with Burp Suite
+* Testing file upload security controls in DVWA
+* Server configuration and vulnerability scanning with Nikto
+* Directory brute-forcing and path discovery using DIRB
+* Manual and automated SQL injection testing with SQLMap
 
 📄 **Full Step‑by‑Step Documentation:**
 
@@ -80,15 +80,15 @@ Lab02_Web_Application_Security_Report_WithScreenshots.docx
 
 ### Lab 03 – Bash Scripting Automation for Reconnaissance
 
-This lab emphasizes Bash shell scripting skills required to automate reconnaissance tools into an interactive menu-driven interface[cite: 18].
+This lab emphasizes Bash shell scripting skills required to automate reconnaissance tools into an interactive menu-driven interface.
 
 **Topics covered:**
 
-* Dynamic user input handling and validation[cite: 18]
-* Scripting dependency checks using `command -v`[cite: 18]
-* Implementing interactive `case` control statements[cite: 18]
-* Automating WhatWeb, Nmap, and DIRB execution[cite: 18]
-* Environment setup and binary permission handling[cite: 18]
+* Dynamic user input handling and validation
+* Scripting dependency checks using `command -v`
+* Implementing interactive `case` control statements
+* Automating WhatWeb, Nmap, and DIRB execution
+* Environment setup and binary permission handling
 
 📄 **Full Step‑by‑Step Documentation:**
 
@@ -106,12 +106,12 @@ Lab03_Bash_Scripting_Report_WithScreenshots.docx
 * Kali Linux (Attacker VM)
 
 
-* Metasploitable 2 (Target VM)[cite: 16, 17]
+* Metasploitable 2 (Target VM)
 * Nmap, WhatWeb, Nikto, DIRB, SQLMap
 
 
-* Burp Suite & Firefox Developer Tools[cite: 17]
-* Bash Scripting Shell[cite: 18]
+* Burp Suite & Firefox Developer Tools
+* Bash Scripting Shell
 
 ---
 
@@ -120,8 +120,8 @@ Lab03_Bash_Scripting_Report_WithScreenshots.docx
 * Map target networks and discover active services accurately
 
 
-* Perform web fingerprinting and analyze HTTP header security[cite: 16, 17]
-* Identify common web application flaws including upload issues and SQL injection[cite: 17]
-* Use scanners and intercepting proxies for security testing[cite: 17]
-* Automate technical tasks by writing structured, safe Bash scripts[cite: 18]
+* Perform web fingerprinting and analyze HTTP header security
+* Identify common web application flaws including upload issues and SQL injection
+* Use scanners and intercepting proxies for security testing
+* Automate technical tasks by writing structured, safe Bash scripts
 * Document security findings and recommendations clearly
