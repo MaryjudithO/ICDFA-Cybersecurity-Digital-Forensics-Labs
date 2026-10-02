@@ -97,11 +97,6 @@ Responsibilities:
 - Presentation Delivery
 
 ---
-
-## AI Usage Declaration
-
-Artificial Intelligence tools were used to support research, content organisation, drafting, and presentation preparation. All generated content was reviewed, verified, and approved by the project team before submission.
-
 ---
 
 ## References
