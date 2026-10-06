@@ -79,19 +79,21 @@ wireshark --version | head -n 1
 
 The OPNsense firewall console was also checked to confirm its interface addresses.
 
-![Figure 1](screenshots/Lab02_01_Firewall_Console_Interfaces.png)
+<img width="361" height="199" alt="Lab02_01_Firewall_Console_Interfaces" src="https://github.com/user-attachments/assets/9be084a8-8971-4b14-b5d1-d07ccccb2a89" />
+
 
 *Figure 1: OPNsense firewall console showing the interface addresses.*
 
 **Observation:** The firewall LAN interface (em1) is 192.168.1.1/24 and the WAN interface (em0) received 10.0.2.15/24 by DHCP.
 
-![Figure 2](screenshots/Lab02_02_WAN_and_Internet_Ping.png)
+<img width="929" height="419" alt="Lab02_02_WAN_and_Internet_Ping" src="https://github.com/user-attachments/assets/48f3662f-821f-443a-b1cf-7af711f5ff20" />
+
 
 *Figure 2: Ubuntu Client: ping -c 4 10.0.2.2 and ping -c 4 1.1.1.1.*
 
 **Observation:** Both tests returned 4 of 4 replies with 0% packet loss. The average round-trip time was about 3.6 ms for 10.0.2.2 and about 187.7 ms for 1.1.1.1.
 
-![Figure 3](screenshots/Lab02_03_IP_Address_and_Route_Verification.png)
+<img width="926" height="441" alt="Lab02_03_IP_Address_and_Route_Verification" src="https://github.com/user-attachments/assets/43181c6f-cf15-441e-bba7-95148907e730" />
 
 *Figure 3: Ubuntu Client: ip -4 -br address and ip route.*
 
@@ -107,8 +109,7 @@ The OPNsense firewall console was also checked to confirm its interface addresse
 - Examined source and destination MAC addresses.
 - Analysed how IPv4 addresses are mapped to MAC addresses.
 
-
-![Figure 4](screenshots/Lab02_04_ARP_Request_and_Reply.png)
+<img width="925" height="455" alt="Lab02_04_ARP_Request_and_Reply" src="https://github.com/user-attachments/assets/30e25f58-5c31-4b0d-8510-ea59c801fce7" />
 
 *Figure 4: Wireshark with the display filter arp.*
 
@@ -123,7 +124,8 @@ The OPNsense firewall console was also checked to confirm its interface addresse
 - Examined the request and reply packets, including the identifier, sequence number and TTL.
 
 
-![Figure 5](screenshots/Lab02_05_ICMP_Echo_Request_Reply.png)
+<img width="929" height="443" alt="Lab02_05_ICMP_Echo_Request_Reply" src="https://github.com/user-attachments/assets/37f9d358-8ad3-4468-9793-655be1c12cb9" />
+
 
 *Figure 5: Wireshark with the display filter icmp.*
 
@@ -139,13 +141,15 @@ DNS traffic was generated with the following command:
 getent hosts google.com
 ```
 
-![Figure 6](screenshots/Lab02_06_DNS_Test_getent_google.com.png)
+<img width="927" height="430" alt="Lab02_06_DNS_Test_getent_google com" src="https://github.com/user-attachments/assets/9719a40a-8dc1-4083-8171-34cb72aef98f" />
+
 
 *Figure 6: Ubuntu Client: ping -c 4 1.1.1.1 and getent hosts google.com.*
 
 **Observation:** The domain name google.com resolved to IPv6 addresses (2a00:1450:4009:c04::8b, ::8a, ::65 and ::66), so name resolution was working.
 
-![Figure 7](screenshots/Lab02_07_DNS_Query_and_Response.png)
+<img width="926" height="419" alt="Lab02_07_DNS_Query_and_Response" src="https://github.com/user-attachments/assets/93112ac4-9e99-41b1-a4af-f34096b99714" />
+
 
 *Figure 7: Wireshark with the display filter dns.*
 
@@ -161,13 +165,14 @@ Web traffic was generated with the following command:
 curl -I https://google.com
 ```
 
-![Figure 8](screenshots/Lab02_08_TCP_Traffic_Generation_curl.png)
+<img width="928" height="431" alt="Lab02_08_TCP_Traffic_Generation_curl" src="https://github.com/user-attachments/assets/f9e41d26-2d2f-433d-9089-32fe832be224" />
+
 
 *Figure 8: Ubuntu Client: curl -I https://google.com.*
 
 **Observation:** The server replied with HTTP/2 301 and a location header pointing to https://www.google.com/. This confirms the client could open an encrypted web connection.
 
-![Figure 9](screenshots/Lab02_09_TCP_Traffic_Capture.png)
+<img width="922" height="416" alt="Lab02_09_TCP_Traffic_Capture" src="https://github.com/user-attachments/assets/151ac71c-3977-4935-bf98-494448a83a73" />
 
 *Figure 9: Wireshark with the display filter tcp.*
 
@@ -188,11 +193,13 @@ A TCP connection starts with a three-way handshake:
 
 The capture was saved in PCAPNG format using **File > Save As** in Wireshark.
 
-![Figure 10](screenshots/Lab02_10_Save_Capture_File_Dialog.png)
+<img width="448" height="322" alt="Lab02_10_Save_Capture_File_Dialog" src="https://github.com/user-attachments/assets/72d61428-18dd-484b-a886-4b60cd8432d2" />
+
 
 *Figure 10: Wireshark Save Capture File As window, with the file type set to pcapng.*
 
-![Figure 11](screenshots/Lab02_11_PCAPNG_File_Saved.png)
+<img width="928" height="416" alt="Lab02_11_PCAPNG_File_Saved" src="https://github.com/user-attachments/assets/ae43117f-3972-4099-8589-992149356c27" />
+
 
 *Figure 11: Wireshark showing the saved capture file in the title bar.*
 
