@@ -176,14 +176,4 @@ Upon completion of this laboratory, the following skills were developed:
 
 ✅ Laboratory completed successfully
 
----
 
-## Repository Structure
-
-```text
-Lab02-TCP-IP-Ethernet-ARP-and-Wireshark-Analysis
-│
-├── README.md
-├── Report
-├── Screenshots
-└── Evidence
