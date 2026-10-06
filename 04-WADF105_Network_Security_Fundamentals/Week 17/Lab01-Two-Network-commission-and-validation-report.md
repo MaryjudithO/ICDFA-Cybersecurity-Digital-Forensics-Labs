@@ -1,4 +1,4 @@
-# WADF105  lab 02:Virtual Lab Commissioning and Network Validation
+# WADF105  lab 01:Virtual Lab Commissioning and Network Validation
 
 
 | Item | Details |
