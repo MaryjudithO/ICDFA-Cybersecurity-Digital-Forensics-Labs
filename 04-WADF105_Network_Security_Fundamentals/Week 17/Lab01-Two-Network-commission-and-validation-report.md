@@ -228,7 +228,7 @@ Three tests confirmed that the client could reach each firewall interface. Each 
 
 <img width="926" height="428" alt="21_Client_Ping_LAN_Gateway_10 10 10 1" src="https://github.com/user-attachments/assets/7f0587ea-efa2-421e-aee3-b0585451cbc6" />
 
-*Figure: client ping Lan Gateway 10.10.10.1
+*Figure: client ping Lan Gateway 10.10.10.1)*
 
 <img width="926" height="434" alt="22_Client_Ping_LAN_and_DMZ_Gateways" src="https://github.com/user-attachments/assets/063e4dda-2967-4849-8d96-b496d42de095" />
 
