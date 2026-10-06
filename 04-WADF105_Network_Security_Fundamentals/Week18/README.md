@@ -11,11 +11,13 @@ All activities were conducted within an authorised and isolated laboratory envir
 ---
 
 ## Student Information
-
+ 
 - Name: Maryjudith Chidinma Ogunaka
+- Registration Number: C11/26/FCDF/17151
 - Programme: ICDFA Trainee | Cohort 11
 - Module: WADF105 Network Security Fundamentals
 - Lab Title: OPNsense Policy Logging and Packet Analysis
+
 
 ---
 
