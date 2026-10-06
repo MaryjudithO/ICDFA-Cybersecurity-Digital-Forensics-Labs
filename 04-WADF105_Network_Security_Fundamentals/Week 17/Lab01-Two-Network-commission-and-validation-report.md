@@ -228,6 +228,9 @@ Three tests confirmed that the client could reach each firewall interface. Each 
 
 <img width="926" height="428" alt="21_Client_Ping_LAN_Gateway_10 10 10 1" src="https://github.com/user-attachments/assets/7f0587ea-efa2-421e-aee3-b0585451cbc6" />
 
+<img width="926" height="434" alt="22_Client_Ping_LAN_and_DMZ_Gateways" src="https://github.com/user-attachments/assets/063e4dda-2967-4849-8d96-b496d42de095" />
+
+<img width="926" height="436" alt="23_Client_Ping_DMZ_and_WAN_Interfaces" src="https://github.com/user-attachments/assets/c115d8c6-b559-4fa8-8c87-e93c256485c2" />
 
 *Figure 21: Ubuntu Client: ping to the DMZ interface (10.10.20.1) and the WAN interface (172.16.100.2).*
 
@@ -238,10 +241,6 @@ Three tests confirmed that the client could reach each firewall interface. Each 
 After the addressing and connectivity checks passed, a snapshot named LAB-BASELINE-VALIDATED was taken on each virtual machine to give a stable recovery point.
 
 <img width="959" height="503" alt="24_VM_Snapshots_LAB-BASELINE-VALIDATED" src="https://github.com/user-attachments/assets/8f4f9124-4c14-4bae-a23c-6570fb15d437" />
-
-<img width="926" height="434" alt="22_Client_Ping_LAN_and_DMZ_Gateways" src="https://github.com/user-attachments/assets/063e4dda-2967-4849-8d96-b496d42de095" />
-
-<img width="926" height="436" alt="23_Client_Ping_DMZ_and_WAN_Interfaces" src="https://github.com/user-attachments/assets/c115d8c6-b559-4fa8-8c87-e93c256485c2" />
 
 *Figure 22: VirtualBox Snapshots view showing LAB-BASELINE-VALIDATED on all four virtual machines.*
 
