@@ -79,12 +79,12 @@ A NAT Network was needed for the uplink. The default network (NatNetwork) was re
 
 <img width="955" height="498" alt="02_NAT_Network_Default_Name_Before_Rename" src="https://github.com/user-attachments/assets/f25e5d37-0018-4d6b-9e56-e94b608b34a4" />
 
-<img width="959" height="491" alt="03_NAT_Network_Renamed_ICDFA-UPLINK" src="https://github.com/user-attachments/assets/311aac59-672a-452c-af5f-c58ca5fd58e4" />
+
 *Figure 2: NAT Networks tab with the default name NatNetwork (10.0.2.0/24, DHCP enabled).*
 
 **Observation:** The network started with the default name and the 10.0.2.0/24 prefix.
 
-
+<img width="959" height="491" alt="03_NAT_Network_Renamed_ICDFA-UPLINK" src="https://github.com/user-attachments/assets/311aac59-672a-452c-af5f-c58ca5fd58e4" />
 
 <img width="584" height="399" alt="04_Client_Adapter1_ICDFA-LAN_MAC" src="https://github.com/user-attachments/assets/6cd65668-dc51-4781-8fa8-e4aa35ecfaa7" />
 
