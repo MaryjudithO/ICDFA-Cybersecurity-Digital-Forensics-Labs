@@ -9,7 +9,7 @@
 | Course | WADF105 Network Security Fundamentals |
 | Laboratory | Virtual Lab Commissioning and Network Validation (Lab 01: Two-VM validation) |
 | Platform | Oracle VM VirtualBox |
-| Date | 02 - 06 October 2026 |
+| Date | 06 October, 2026
 
 
 ## 1. Aim
