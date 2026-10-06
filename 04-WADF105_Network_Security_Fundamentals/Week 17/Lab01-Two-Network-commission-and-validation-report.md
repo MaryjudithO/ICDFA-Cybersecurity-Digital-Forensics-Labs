@@ -296,18 +296,23 @@ Wireshark 4.2.2 was opened on the Ubuntu Client and set to capture on the interf
 <img width="920" height="422" alt="27_Client_LAN_Gateway_Ping_Retest" src="https://github.com/user-attachments/assets/9531b125-9116-4d37-8068-cbedc712e033" />
 
 
+<img width="925" height="413" alt="28_Client_Web_Test_curl_FAIL" src="https://github.com/user-attachments/assets/f8dbcda2-3a03-4d12-9381-087640e7ee82" />
+
+<img width="550" height="388" alt="29_Wireshark_Launch_Window" src="https://github.com/user-attachments/assets/52dc3fd1-4ea9-4e23-955a-9bd455f34a7e" />
+
+
+
 *Figure 27: Wireshark opened from the terminal on the Ubuntu Client.*
 
 **Observation:** The application started and listed the available capture interfaces.
 
-<img width="925" height="413" alt="28_Client_Web_Test_curl_FAIL" src="https://github.com/user-attachments/assets/f8dbcda2-3a03-4d12-9381-087640e7ee82" />
 
 
 *Figure 28: Wireshark welcome screen with the enp0s3 interface selected.*
 
 **Observation:** enp0s3 is the client adapter on ICDFA-LAN, so it carries all of the client traffic.
 
-<img width="550" height="388" alt="29_Wireshark_Launch_Window" src="https://github.com/user-attachments/assets/52dc3fd1-4ea9-4e23-955a-9bd455f34a7e" />
+
 
 
 *Figure 29: Wireshark capturing live on enp0s3.*
