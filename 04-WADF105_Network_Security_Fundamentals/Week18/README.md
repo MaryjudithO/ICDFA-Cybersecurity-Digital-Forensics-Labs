@@ -2,7 +2,7 @@
 
 ## Student Information
 
-**Student Name:** Maryjudith Chidinma Ogunaka  
+**Name:** Maryjudith Chidinma Ogunaka  
 **Registration Number:** C11/26/FCDF/17151  
 **Programme:** ICDFA Fellowship in Cybersecurity and Digital Forensics  
 **Cohort:** 11  
@@ -12,22 +12,20 @@
 
 ## Introduction
 
-This laboratory focused on the practical analysis of network communications within a controlled virtual laboratory environment. Using Wireshark, various protocols were captured and analysed to understand how devices communicate across a TCP/IP network.
+This laboratory focused on the practical analysis of network communications using Wireshark within a virtual network environment. The exercise involved examining Ethernet communication, Address Resolution Protocol (ARP), Internet Control Message Protocol (ICMP), Domain Name System (DNS), and Transmission Control Protocol (TCP) traffic.
 
-The exercise provided practical exposure to Ethernet addressing, Address Resolution Protocol (ARP), Internet Control Message Protocol (ICMP), Domain Name System (DNS) operations, and Transmission Control Protocol (TCP) communication.
+The laboratory provided practical experience in packet capture, protocol analysis and network troubleshooting techniques commonly used in cybersecurity and digital forensics.
 
 ---
 
 ## Laboratory Environment
 
-The practical environment was hosted on Oracle VM VirtualBox and consisted of the following virtual machines:
+The practical environment consisted of:
 
 - Ubuntu Client
 - OPNsense Firewall
-- Ubuntu DMZ Server
-- Ubuntu VRouter
 
-The laboratory was conducted using the validated baseline environment established during Lab 01.
+Wireshark was installed on the Ubuntu Client and used as the primary packet capture and analysis tool throughout the exercise.
 
 ---
 
@@ -36,13 +34,12 @@ The laboratory was conducted using the validated baseline environment establishe
 The objectives of this laboratory were to:
 
 - Examine Ethernet frame communication.
-- Investigate ARP requests and replies.
-- Analyse IPv4 and MAC addressing relationships.
-- Capture and analyse ICMP traffic.
-- Observe DNS name resolution traffic.
-- Analyse TCP three-way handshakes.
-- Develop packet analysis skills using Wireshark.
-- Improve troubleshooting and protocol investigation techniques.
+- Analyse ARP requests and replies.
+- Observe ICMP echo traffic.
+- Investigate DNS name resolution.
+- Analyse TCP connection establishment.
+- Develop packet capture and analysis skills using Wireshark.
+- Understand communication across the TCP/IP protocol stack.
 
 ---
 
@@ -50,7 +47,7 @@ The objectives of this laboratory were to:
 
 ### Baseline Verification
 
-The following commands were executed to verify the initial network configuration:
+The following commands were used to verify the client network configuration:
 
 ```bash
 ip -4 -br address
@@ -76,18 +73,117 @@ groups
 wireshark --version | head -n 1
 ```
 
----
-
 ### ARP Analysis
 
-- Generated ARP traffic through network communication.
-- Identified ARP Requests.
-- Identified ARP Replies.
-- Examined source and destination MAC addresses.
-- Analysed how IPv4 addresses are mapped to MAC addresses.
-
----
+- Generated ARP traffic.
+- Captured ARP Requests.
+- Captured ARP Replies.
+- Examined MAC address resolution.
 
 ### ICMP Analysis
 
-- Generated ICMP Echo Requests and Echo Replies
+- Generated ICMP Echo Requests and Echo Replies.
+- Analysed packet flow between hosts.
+- Verified network connectivity.
+
+### DNS Analysis
+
+- Generated DNS queries.
+- Captured DNS responses.
+- Examined domain name resolution.
+
+### TCP Analysis
+
+- Generated web traffic using HTTP/HTTPS requests.
+- Captured TCP packets.
+- Identified the TCP three-way handshake (SYN, SYN-ACK, ACK).
+
+---
+
+## Evidence Collected
+
+The laboratory evidence included:
+
+- Baseline verification screenshots
+- ARP analysis screenshots
+- ICMP analysis screenshots
+- DNS query and response screenshots
+- TCP handshake screenshots
+- Wireshark packet capture evidence
+- Exported packet capture file
+
+---
+
+## Packet Capture File
+
+The complete packet capture was successfully exported and saved as:
+
+```text
+C11-26-FCDF-17151_Lab02_Evidence.pcapng
+```
+
+The capture file contains evidence of:
+
+- ARP communications
+- ICMP traffic
+- DNS queries and responses
+- TCP communication sessions
+
+---
+
+## Tools and Technologies
+
+- Oracle VM VirtualBox
+- Ubuntu Linux
+- OPNsense Firewall
+- Wireshark
+- TCP/IP
+- Ethernet
+- ARP
+- ICMP
+- DNS
+- TCP
+
+---
+
+## Learning Outcomes
+
+Upon completion of this laboratory, the following skills were developed:
+
+- Network packet capture and analysis
+- Protocol troubleshooting
+- Ethernet and ARP investigation
+- DNS traffic analysis
+- TCP handshake analysis
+- Wireshark proficiency
+- Network communication analysis
+
+---
+
+## Result
+
+✅ Baseline network configuration verified
+
+✅ ARP Requests and Replies analysed
+
+✅ ICMP communication analysed
+
+✅ DNS queries and responses analysed
+
+✅ TCP three-way handshake analysed
+
+✅ Packet capture evidence exported successfully
+
+✅ Laboratory completed successfully
+
+---
+
+## Repository Structure
+
+```text
+Lab02-TCP-IP-Ethernet-ARP-and-Wireshark-Analysis
+│
+├── README.md
+├── Report
+├── Screenshots
+└── Evidence
