@@ -321,13 +321,13 @@ Wireshark 4.2.2 was opened on the Ubuntu Client and set to capture on the interf
 
 <img width="926" height="410" alt="31_Wireshark_Capture_Running" src="https://github.com/user-attachments/assets/ecd4c982-60f3-4327-94cd-e076ee7fa0c8" />
 
+<img width="925" height="419" alt="32_Wireshark_Capture_Stopped" src="https://github.com/user-attachments/assets/2bf3766c-fbda-4328-b6d6-53ed01cfa5a3" />
+
 *Figure 30: Wireshark capture stopped.*
 
 **Observation:** The capture contained 29 packets and was kept for filtering.
 
 ### 6.1 ARP traffic
-
-<img width="925" height="419" alt="32_Wireshark_Capture_Stopped" src="https://github.com/user-attachments/assets/2bf3766c-fbda-4328-b6d6-53ed01cfa5a3" />
 
 <img width="929" height="431" alt="33_Wireshark_ARP_Filter" src="https://github.com/user-attachments/assets/871a775a-f507-426b-b801-8600206524c7" />
 
