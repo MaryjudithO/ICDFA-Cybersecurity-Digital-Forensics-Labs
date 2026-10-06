@@ -385,3 +385,54 @@ The Ubuntu Client uses 10.10.10.1 as its default gateway because that is the LAN
 
 The ICDFA virtual lab was commissioned successfully. All virtual machines were attached to the correct networks with unique MAC addresses, the IP addressing and routing were verified, and the Ubuntu Client could reach the LAN, DMZ and WAN interfaces of the OPNsense firewall. Wireshark confirmed ARP, DNS and ICMP traffic between the client and the firewall, and the LAB-BASELINE-VALIDATED snapshot was saved on every machine. External internet and web connectivity were not achieved during testing, and this remains to be investigated in a later practical.
 
+  ## Lab 01 analysis answers 
+
+1. Why must each enabled virtual adapter have a unique MAC address?
+
+Each enabled virtual adapter must have a unique MAC address because MAC addresses identify network interfaces at the Data Link Layer. If two devices share the same MAC address, network traffic may be delivered incorrectly, causing communication failures, ARP conflicts, and troubleshooting difficulties.
+
+2. Why is the Client connected only to ICDFA-LAN instead of directly to ICDFA-UPLINK?
+
+The Client is connected only to ICDFA-LAN so that all traffic passes through the OPNsense Firewall for routing, filtering, and security enforcement. Connecting the Client directly to ICDFA-UPLINK would bypass the firewall and defeat the purpose of the lab's network security architecture.
+
+3. What is the purpose of the 172.16.100.0/30 transit network?
+
+The 172.16.100.0/30 network acts as a transit network between the OPNsense Firewall and the Ubuntu VRouter. It provides a dedicated point-to-point connection for routing traffic between the internal laboratory networks and the external uplink network.
+
+4. Which evidence proves that the DMZ web and DNS services are operating?
+
+Evidence that the DMZ services are operating includes:
+
+The DMZ Server successfully received its configured address 10.10.20.10/24.
+Successful connectivity to the DMZ interface 10.10.20.1 with 0% packet loss.
+Wireshark captures showing successful DNS queries and responses between the client and the firewall.
+
+These results demonstrate that the DMZ network and associated services were accessible and functioning correctly.
+
+5. If the Client reaches 10.10.10.1 but not 10.10.20.10, which three settings should be checked first?
+
+The first three settings to check are:
+
+DMZ Server IP Configuration
+ Verify that the DMZ Server is correctly configured with:
+
+10.10.20.10/24
+
+
+and that its network interface is active.
+
+VirtualBox Network Adapter Assignment
+ Confirm that the DMZ Server adapter is connected to:
+
+ICDFA-DMZ
+
+
+and not to the wrong network.
+
+Firewall Interface and Routing Configuration
+ Verify that the OPNsense DMZ interface is configured as:
+
+10.10.20.1/24
+
+
+and that routing/firewall policies allow communication between the LAN and DMZ networks.
