@@ -66,7 +66,8 @@ Internal network names in VirtualBox are case-sensitive, so each name was entere
 
 Before any configuration, VirtualBox Manager was checked to confirm that all four virtual machines were powered off.
 
-![Figure 1](screenshots/01_All_VMs_Powered_Off.png)
+<img width="361" height="199" alt="Lab02_01_Firewall_Console_Interfaces" src="https://github.com/user-attachments/assets/240127f6-add7-406e-ad76-53947404ac69" />
+
 
 *Figure 1: VirtualBox Manager showing all four virtual machines powered off.*
 
