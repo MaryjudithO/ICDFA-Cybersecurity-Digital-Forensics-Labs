@@ -354,15 +354,14 @@ The first ICMP capture attempt showed no packets because no ping had been sent w
 <img width="923" height="433" alt="34_Wireshark_DNS_Filter" src="https://github.com/user-attachments/assets/88608db6-63e2-420d-ad4c-e19807ce8c18" />
 
 
-*Figure 34: Wireshark with the display filter icmp showing echo requests and replies.*
-
-**Observation:** 8 ICMP packets displayed: four echo requests from 10.10.10.188 and four echo replies from 10.10.10.1 (sequence numbers 1 to 4, TTL 64). Result: **PASS**.
-
-<img width="932" height="440" alt="35_Wireshark_ICMP_Filter_No_Packets" src="https://github.com/user-attachments/assets/5f7e7671-4784-4dff-b133-a623608c0071" />
 
 <img width="929" height="431" alt="36_Wireshark_ICMP_Filter_Live_Capture_Empty" src="https://github.com/user-attachments/assets/fc775c26-a0f8-4ea4-9282-17b049c7ecd6" />
 
 <img width="929" height="423" alt="37_Wireshark_ICMP_Echo_Request_Reply" src="https://github.com/user-attachments/assets/ae268262-6145-4571-b81e-cae88fd2a585" />
+
+*Figure 34: Wireshark with the display filter icmp showing echo requests and replies.*
+
+**Observation:** 8 ICMP packets displayed: four echo requests from 10.10.10.188 and four echo replies from 10.10.10.1 (sequence numbers 1 to 4, TTL 64). Result: **PASS**.
 
 
 ## 7. Default Gateway Explanation
