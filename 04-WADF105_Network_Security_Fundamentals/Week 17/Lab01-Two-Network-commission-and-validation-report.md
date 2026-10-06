@@ -216,7 +216,7 @@ Three tests confirmed that the client could reach each firewall interface. Each 
 
 <img width="644" height="410" alt="19_VRouter_IP_Address_and_Route" src="https://github.com/user-attachments/assets/a1f37543-5e09-4783-b477-5f19892f165c" />
 
-*Figure 19: Ubuntu Client: ping -c 4 10.10.10.1 (LAN gateway).*
+*Figure 19: Vrouter ip address and route).*
 
 **Observation:** 4 packets transmitted, 4 received, 0% packet loss, average round-trip about 3.4 ms. Result: **PASS**.
 
