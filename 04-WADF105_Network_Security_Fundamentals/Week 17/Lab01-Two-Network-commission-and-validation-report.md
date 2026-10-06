@@ -175,6 +175,8 @@ Each adapter was attached to its network and a new MAC address was generated usi
 <img width="593" height="391" alt="14_VRouter_Adapter3_Not_Attached" src="https://github.com/user-attachments/assets/b38cc4e9-26e5-42df-8a8d-7283de8abaf5" />
 
 
+<img width="582" height="394" alt="15_VRouter_Adapter4_Not_Attached" src="https://github.com/user-attachments/assets/954e730d-befd-46ab-a9f9-17af2e0837a7" />
+
 *Figure 14: VRouter Adapter 4: disabled and not attached.*
 
 **Observation:** Unused adapter left disabled.
@@ -187,14 +189,13 @@ The virtual machines were started in the recommended order: OPNsense Firewall, U
 
 On each Ubuntu system the commands `ip -4 -br address` and `ip route` were run to confirm addressing and routing.
 
-<img width="582" height="394" alt="15_VRouter_Adapter4_Not_Attached" src="https://github.com/user-attachments/assets/954e730d-befd-46ab-a9f9-17af2e0837a7" />
+<img width="921" height="435" alt="16_Client_IP_Address_Small_Window" src="https://github.com/user-attachments/assets/bdc51104-7c0e-46ab-bb4c-ad9333371a49" />
 
 
 *Figure 15: Ubuntu Client: ip -4 -br address and ip route.*
 
 **Observation:** The client holds 10.10.10.188/24 on enp0s3. The default route is via 10.10.10.1 (learned by DHCP), and 10.10.10.0/24 is directly connected.
 
-<img width="921" height="435" alt="16_Client_IP_Address_Small_Window" src="https://github.com/user-attachments/assets/bdc51104-7c0e-46ab-bb4c-ad9333371a49" />
 
 
 *Figure 16: Ubuntu DMZ Server: ip -4 -br address and ip route.*
