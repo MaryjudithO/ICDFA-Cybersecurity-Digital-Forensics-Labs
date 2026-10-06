@@ -66,7 +66,7 @@ Internal network names in VirtualBox are case-sensitive, so each name was entere
 
 Before any configuration, VirtualBox Manager was checked to confirm that all four virtual machines were powered off.
 
-<img width="361" height="199" alt="Lab02_01_Firewall_Console_Interfaces" src="https://github.com/user-attachments/assets/240127f6-add7-406e-ad76-53947404ac69" />
+<<img width="959" height="502" alt="01_All_VMs_Powered_Off" src="https://github.com/user-attachments/assets/9a97ccea-0644-448b-9469-c75b4a85d2b3" />
 
 
 *Figure 1: VirtualBox Manager showing all four virtual machines powered off.*
@@ -77,13 +77,14 @@ Before any configuration, VirtualBox Manager was checked to confirm that all fou
 
 A NAT Network was needed for the uplink. The default network (NatNetwork) was renamed to ICDFA-UPLINK. Both states are shown below.
 
-![Figure 2](screenshots/02_NAT_Network_Default_Name_Before_Rename.png)
+<img width="955" height="498" alt="02_NAT_Network_Default_Name_Before_Rename" src="https://github.com/user-attachments/assets/f25e5d37-0018-4d6b-9e56-e94b608b34a4" />
 
 *Figure 2: NAT Networks tab with the default name NatNetwork (10.0.2.0/24, DHCP enabled).*
 
 **Observation:** The network started with the default name and the 10.0.2.0/24 prefix.
 
-![Figure 3](screenshots/03_NAT_Network_Renamed_ICDFA-UPLINK.png)
+<img width="959" height="491" alt="03_NAT_Network_Renamed_ICDFA-UPLINK" src="https://github.com/user-attachments/assets/311aac59-672a-452c-af5f-c58ca5fd58e4" />
+
 
 *Figure 3: NAT Network renamed to ICDFA-UPLINK (10.0.2.0/24, DHCP enabled).*
 
@@ -95,7 +96,8 @@ Each adapter was attached to its network and a new MAC address was generated usi
 
 #### Ubuntu Client
 
-![Figure 4](screenshots/04_Client_Adapter1_ICDFA-LAN_MAC.png)
+<img width="584" height="399" alt="04_Client_Adapter1_ICDFA-LAN_MAC" src="https://github.com/user-attachments/assets/6cd65668-dc51-4781-8fa8-e4aa35ecfaa7" />
+
 
 *Figure 4: Ubuntu Client (ICDFA-NSLAB), Adapter 1: Internal Network ICDFA-LAN with a generated MAC address.*
 
@@ -103,25 +105,29 @@ Each adapter was attached to its network and a new MAC address was generated usi
 
 #### OPNsense Firewall
 
-![Figure 5](screenshots/05_Firewall_Adapter1_ICDFA-WAN_MAC.png)
+<img width="577" height="377" alt="05_Firewall_Adapter1_ICDFA-WAN_MAC" src="https://github.com/user-attachments/assets/32c84792-4dda-4a01-9808-2b20875ab118" />
+
 
 *Figure 5: Firewall Adapter 1: Internal Network ICDFA-WAN with a generated MAC address.*
 
 **Observation:** Adapter 1 is the firewall WAN-side connection.
 
-![Figure 6](screenshots/07_Firewall_Adapter2_ICDFA-LAN_MAC.png)
+<img width="586" height="382" alt="06_Firewall_Adapter1_ICDFA-WAN_MAC_duplicate" src="https://github.com/user-attachments/assets/1563bcdf-140b-4ff3-9c37-805cb00d8dba" />
+
 
 *Figure 6: Firewall Adapter 2: Internal Network ICDFA-LAN with a generated MAC address.*
 
 **Observation:** Adapter 2 faces the client network.
 
-![Figure 7](screenshots/08_Firewall_Adapter3_ICDFA-DMZ_MAC.png)
+<img width="569" height="388" alt="07_Firewall_Adapter2_ICDFA-LAN_MAC" src="https://github.com/user-attachments/assets/ee46543f-8ce4-4ea0-8ba0-61e20c4eb1ec" />
+
 
 *Figure 7: Firewall Adapter 3: Internal Network ICDFA-DMZ with a generated MAC address.*
 
 **Observation:** Adapter 3 faces the DMZ network.
 
-![Figure 8](screenshots/09_Firewall_Adapter4_Not_Attached.png)
+<img width="585" height="390" alt="08_Firewall_Adapter3_ICDFA-DMZ_MAC" src="https://github.com/user-attachments/assets/e465de56-a57e-47a5-a006-73e579871308" />
+
 
 *Figure 8: Firewall Adapter 4: disabled and not attached.*
 
@@ -129,13 +135,15 @@ Each adapter was attached to its network and a new MAC address was generated usi
 
 #### Ubuntu DMZ Server
 
-![Figure 9](screenshots/10_DMZ_Adapter1_ICDFA-DMZ_MAC.png)
+<img width="583" height="378" alt="09_Firewall_Adapter4_Not_Attached" src="https://github.com/user-attachments/assets/67685b6c-8fba-4a55-91b4-9bfe92916123" />
+
 
 *Figure 9: DMZ Server Adapter 1: Internal Network ICDFA-DMZ with a generated MAC address.*
 
 **Observation:** Adapter 1 connects the server to the DMZ.
 
-![Figure 10](screenshots/11_DMZ_Adapter2_ICDFA-WAN_MAC.png)
+<img width="590" height="391" alt="10_DMZ_Adapter1_ICDFA-DMZ_MAC" src="https://github.com/user-attachments/assets/d2d04369-fdc5-438a-b7ff-104d3a2ee7dc" />
+
 
 *Figure 10: DMZ Server Adapter 2: Internal Network ICDFA-WAN with a generated MAC address.*
 
@@ -143,25 +151,29 @@ Each adapter was attached to its network and a new MAC address was generated usi
 
 #### Ubuntu VRouter
 
-![Figure 11](screenshots/12_VRouter_Adapter1_NAT_ICDFA-UPLINK_MAC.png)
+<img width="588" height="382" alt="11_DMZ_Adapter2_ICDFA-WAN_MAC" src="https://github.com/user-attachments/assets/6c85085e-5d9a-4a82-98e3-7d5538d7a2f6" />
+
 
 *Figure 11: VRouter Adapter 1: NAT Network ICDFA-UPLINK with a generated MAC address.*
 
 **Observation:** This is the only adapter attached to the NAT Network, giving the lab its uplink.
 
-![Figure 12](screenshots/13_VRouter_Adapter2_ICDFA-WAN_MAC.png)
+<img width="581" height="398" alt="12_VRouter_Adapter1_NAT_ICDFA-UPLINK_MAC" src="https://github.com/user-attachments/assets/8f278d8c-38ec-47a4-887f-7aaba7f153e9" />
+
 
 *Figure 12: VRouter Adapter 2: Internal Network ICDFA-WAN with a generated MAC address.*
 
 **Observation:** Adapter 2 connects the VRouter to the same WAN segment as the firewall.
 
-![Figure 13](screenshots/14_VRouter_Adapter3_Not_Attached.png)
+<img width="590" height="398" alt="13_VRouter_Adapter2_ICDFA-WAN_MAC" src="https://github.com/user-attachments/assets/18af7369-5d7f-48ec-b270-9b5191ad1f06" />
+
 
 *Figure 13: VRouter Adapter 3: disabled and not attached.*
 
 **Observation:** Unused adapter left disabled.
 
-![Figure 14](screenshots/15_VRouter_Adapter4_Not_Attached.png)
+<img width="593" height="391" alt="14_VRouter_Adapter3_Not_Attached" src="https://github.com/user-attachments/assets/b38cc4e9-26e5-42df-8a8d-7283de8abaf5" />
+
 
 *Figure 14: VRouter Adapter 4: disabled and not attached.*
 
@@ -175,19 +187,22 @@ The virtual machines were started in the recommended order: OPNsense Firewall, U
 
 On each Ubuntu system the commands `ip -4 -br address` and `ip route` were run to confirm addressing and routing.
 
-![Figure 15](screenshots/17_Client_IP_Address_and_Route.png)
+<img width="582" height="394" alt="15_VRouter_Adapter4_Not_Attached" src="https://github.com/user-attachments/assets/954e730d-befd-46ab-a9f9-17af2e0837a7" />
+
 
 *Figure 15: Ubuntu Client: ip -4 -br address and ip route.*
 
 **Observation:** The client holds 10.10.10.188/24 on enp0s3. The default route is via 10.10.10.1 (learned by DHCP), and 10.10.10.0/24 is directly connected.
 
-![Figure 16](screenshots/18_DMZ_IP_Address_and_Route.png)
+<img width="921" height="435" alt="16_Client_IP_Address_Small_Window" src="https://github.com/user-attachments/assets/bdc51104-7c0e-46ab-bb4c-ad9333371a49" />
+
 
 *Figure 16: Ubuntu DMZ Server: ip -4 -br address and ip route.*
 
-**Observation:** The DMZ interface (enp0s8) holds 10.10.20.10/24, with the connected route 10.10.20.0/24.
+**Observation:** The DMZ interface (enp0s8) holds 10.10.20.10/24, with the connected route 10.10.20.0/24
 
-![Figure 17](screenshots/19_VRouter_IP_Address_and_Route.png)
+<img width="928" height="428" alt="17_Client_IP_Address_and_Route" src="https://github.com/user-attachments/assets/45cc89e3-ef44-4914-8659-20eab2a01348" />
+
 
 *Figure 17: Ubuntu VRouter: login, ip -4 -br address and ip route.*
 
@@ -195,7 +210,8 @@ On each Ubuntu system the commands `ip -4 -br address` and `ip route` were run t
 
 ### 4.6 Firewall interface verification
 
-![Figure 18](screenshots/20_Firewall_Console_Interfaces.png)
+<img width="644" height="407" alt="18_DMZ_IP_Address_and_Route" src="https://github.com/user-attachments/assets/246b5985-f9da-4048-9f7a-8e11cd0283f5" />
+
 
 *Figure 18: OPNsense firewall console showing the interface assignments.*
 
@@ -205,19 +221,20 @@ On each Ubuntu system the commands `ip -4 -br address` and `ip route` were run t
 
 Three tests confirmed that the client could reach each firewall interface. Each used `ping -c 4`.
 
-![Figure 19](screenshots/21_Client_Ping_LAN_Gateway_10.10.10.1.png)
+<img width="644" height="410" alt="19_VRouter_IP_Address_and_Route" src="https://github.com/user-attachments/assets/a1f37543-5e09-4783-b477-5f19892f165c" />
 
 *Figure 19: Ubuntu Client: ping -c 4 10.10.10.1 (LAN gateway).*
 
 **Observation:** 4 packets transmitted, 4 received, 0% packet loss, average round-trip about 3.4 ms. Result: **PASS**.
 
-![Figure 20](screenshots/22_Client_Ping_LAN_and_DMZ_Gateways.png)
+<img width="343" height="205" alt="20_Firewall_Console_Interfaces" src="https://github.com/user-attachments/assets/9f088ba3-01af-44e5-809e-5a5db32b502b" />
 
 *Figure 20: Ubuntu Client: ping to the LAN gateway (10.10.10.1) and the DMZ interface (10.10.20.1).*
 
 **Observation:** Both tests returned 4 of 4 replies with 0% packet loss; the DMZ interface averaged about 8.0 ms. Result: **PASS**.
 
-![Figure 21](screenshots/23_Client_Ping_DMZ_and_WAN_Interfaces.png)
+<img width="926" height="428" alt="21_Client_Ping_LAN_Gateway_10 10 10 1" src="https://github.com/user-attachments/assets/7f0587ea-efa2-421e-aee3-b0585451cbc6" />
+
 
 *Figure 21: Ubuntu Client: ping to the DMZ interface (10.10.20.1) and the WAN interface (172.16.100.2).*
 
@@ -227,7 +244,8 @@ Three tests confirmed that the client could reach each firewall interface. Each 
 
 After the addressing and connectivity checks passed, a snapshot named LAB-BASELINE-VALIDATED was taken on each virtual machine to give a stable recovery point.
 
-![Figure 22](screenshots/24_VM_Snapshots_LAB-BASELINE-VALIDATED.png)
+<img width="926" height="434" alt="22_Client_Ping_LAN_and_DMZ_Gateways" src="https://github.com/user-attachments/assets/063e4dda-2967-4849-8d96-b496d42de095" />
+
 
 *Figure 22: VirtualBox Snapshots view showing LAB-BASELINE-VALIDATED on all four virtual machines.*
 
@@ -239,7 +257,8 @@ The second part of the laboratory tested external connectivity from the Ubuntu C
 
 ### 5.1 Internet reachability
 
-![Figure 23](screenshots/25_Client_Internet_Ping_1.1.1.1_FAIL.png)
+<img width="926" height="436" alt="23_Client_Ping_DMZ_and_WAN_Interfaces" src="https://github.com/user-attachments/assets/c115d8c6-b559-4fa8-8c87-e93c256485c2" />
+
 
 *Figure 23: Ubuntu Client: ping -c 4 1.1.1.1.*
 
@@ -247,7 +266,8 @@ The second part of the laboratory tested external connectivity from the Ubuntu C
 
 ### 5.2 DNS resolution
 
-![Figure 24](screenshots/26_Client_DNS_Test_getent_opnsense.org.png)
+<img width="959" height="503" alt="24_VM_Snapshots_LAB-BASELINE-VALIDATED" src="https://github.com/user-attachments/assets/8f4f9124-4c14-4bae-a23c-6570fb15d437" />
+
 
 *Figure 24: Ubuntu Client: getent hosts opnsense.org.*
 
