@@ -306,20 +306,19 @@ Wireshark 4.2.2 was opened on the Ubuntu Client and set to capture on the interf
 
 **Observation:** The application started and listed the available capture interfaces.
 
-
+<img width="955" height="442" alt="30_Wireshark_Select_Interface_enp0s3" src="https://github.com/user-attachments/assets/588ca0bb-a75a-433a-aa77-472ba4697d1b" />
 
 *Figure 28: Wireshark welcome screen with the enp0s3 interface selected.*
 
 **Observation:** enp0s3 is the client adapter on ICDFA-LAN, so it carries all of the client traffic.
 
-<img width="955" height="442" alt="30_Wireshark_Select_Interface_enp0s3" src="https://github.com/user-attachments/assets/588ca0bb-a75a-433a-aa77-472ba4697d1b" />
+
+<img width="926" height="410" alt="31_Wireshark_Capture_Running" src="https://github.com/user-attachments/assets/ecd4c982-60f3-4327-94cd-e076ee7fa0c8" />
 
 
 *Figure 29: Wireshark capturing live on enp0s3.*
 
 **Observation:** The capture shows DNS queries to 10.10.10.1, ARP traffic and repeated TCP SYN retransmissions to external addresses, which matches the failed internet and web tests.
-
-<img width="926" height="410" alt="31_Wireshark_Capture_Running" src="https://github.com/user-attachments/assets/ecd4c982-60f3-4327-94cd-e076ee7fa0c8" />
 
 <img width="925" height="419" alt="32_Wireshark_Capture_Stopped" src="https://github.com/user-attachments/assets/2bf3766c-fbda-4328-b6d6-53ed01cfa5a3" />
 
