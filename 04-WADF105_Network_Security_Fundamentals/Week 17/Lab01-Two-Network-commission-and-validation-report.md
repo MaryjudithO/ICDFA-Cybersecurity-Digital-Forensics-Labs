@@ -79,12 +79,14 @@ A NAT Network was needed for the uplink. The default network (NatNetwork) was re
 
 <img width="955" height="498" alt="02_NAT_Network_Default_Name_Before_Rename" src="https://github.com/user-attachments/assets/f25e5d37-0018-4d6b-9e56-e94b608b34a4" />
 
+<img width="959" height="491" alt="03_NAT_Network_Renamed_ICDFA-UPLINK" src="https://github.com/user-attachments/assets/311aac59-672a-452c-af5f-c58ca5fd58e4" />
 *Figure 2: NAT Networks tab with the default name NatNetwork (10.0.2.0/24, DHCP enabled).*
 
 **Observation:** The network started with the default name and the 10.0.2.0/24 prefix.
 
-<img width="959" height="491" alt="03_NAT_Network_Renamed_ICDFA-UPLINK" src="https://github.com/user-attachments/assets/311aac59-672a-452c-af5f-c58ca5fd58e4" />
 
+
+<img width="584" height="399" alt="04_Client_Adapter1_ICDFA-LAN_MAC" src="https://github.com/user-attachments/assets/6cd65668-dc51-4781-8fa8-e4aa35ecfaa7" />
 
 *Figure 3: NAT Network renamed to ICDFA-UPLINK (10.0.2.0/24, DHCP enabled).*
 
@@ -96,8 +98,8 @@ Each adapter was attached to its network and a new MAC address was generated usi
 
 #### Ubuntu Client
 
-<img width="584" height="399" alt="04_Client_Adapter1_ICDFA-LAN_MAC" src="https://github.com/user-attachments/assets/6cd65668-dc51-4781-8fa8-e4aa35ecfaa7" />
 
+<img width="577" height="377" alt="05_Firewall_Adapter1_ICDFA-WAN_MAC" src="https://github.com/user-attachments/assets/32c84792-4dda-4a01-9808-2b20875ab118" />
 
 *Figure 4: Ubuntu Client (ICDFA-NSLAB), Adapter 1: Internal Network ICDFA-LAN with a generated MAC address.*
 
@@ -105,29 +107,28 @@ Each adapter was attached to its network and a new MAC address was generated usi
 
 #### OPNsense Firewall
 
-<img width="577" height="377" alt="05_Firewall_Adapter1_ICDFA-WAN_MAC" src="https://github.com/user-attachments/assets/32c84792-4dda-4a01-9808-2b20875ab118" />
 
+<img width="586" height="382" alt="06_Firewall_Adapter1_ICDFA-WAN_MAC_duplicate" src="https://github.com/user-attachments/assets/1563bcdf-140b-4ff3-9c37-805cb00d8dba" />
 
 *Figure 5: Firewall Adapter 1: Internal Network ICDFA-WAN with a generated MAC address.*
 
 **Observation:** Adapter 1 is the firewall WAN-side connection.
 
-<img width="586" height="382" alt="06_Firewall_Adapter1_ICDFA-WAN_MAC_duplicate" src="https://github.com/user-attachments/assets/1563bcdf-140b-4ff3-9c37-805cb00d8dba" />
+<img width="569" height="388" alt="07_Firewall_Adapter2_ICDFA-LAN_MAC" src="https://github.com/user-attachments/assets/ee46543f-8ce4-4ea0-8ba0-61e20c4eb1ec" />
 
 
 *Figure 6: Firewall Adapter 2: Internal Network ICDFA-LAN with a generated MAC address.*
 
 **Observation:** Adapter 2 faces the client network.
 
-<img width="569" height="388" alt="07_Firewall_Adapter2_ICDFA-LAN_MAC" src="https://github.com/user-attachments/assets/ee46543f-8ce4-4ea0-8ba0-61e20c4eb1ec" />
+<img width="585" height="390" alt="08_Firewall_Adapter3_ICDFA-DMZ_MAC" src="https://github.com/user-attachments/assets/e465de56-a57e-47a5-a006-73e579871308" />
 
 
 *Figure 7: Firewall Adapter 3: Internal Network ICDFA-DMZ with a generated MAC address.*
 
 **Observation:** Adapter 3 faces the DMZ network.
 
-<img width="585" height="390" alt="08_Firewall_Adapter3_ICDFA-DMZ_MAC" src="https://github.com/user-attachments/assets/e465de56-a57e-47a5-a006-73e579871308" />
-
+<img width="583" height="378" alt="09_Firewall_Adapter4_Not_Attached" src="https://github.com/user-attachments/assets/67685b6c-8fba-4a55-91b4-9bfe92916123" />
 
 *Figure 8: Firewall Adapter 4: disabled and not attached.*
 
@@ -135,15 +136,13 @@ Each adapter was attached to its network and a new MAC address was generated usi
 
 #### Ubuntu DMZ Server
 
-<img width="583" height="378" alt="09_Firewall_Adapter4_Not_Attached" src="https://github.com/user-attachments/assets/67685b6c-8fba-4a55-91b4-9bfe92916123" />
-
+<img width="590" height="391" alt="10_DMZ_Adapter1_ICDFA-DMZ_MAC" src="https://github.com/user-attachments/assets/d2d04369-fdc5-438a-b7ff-104d3a2ee7dc" />
 
 *Figure 9: DMZ Server Adapter 1: Internal Network ICDFA-DMZ with a generated MAC address.*
 
 **Observation:** Adapter 1 connects the server to the DMZ.
 
-<img width="590" height="391" alt="10_DMZ_Adapter1_ICDFA-DMZ_MAC" src="https://github.com/user-attachments/assets/d2d04369-fdc5-438a-b7ff-104d3a2ee7dc" />
-
+<img width="588" height="382" alt="11_DMZ_Adapter2_ICDFA-WAN_MAC" src="https://github.com/user-attachments/assets/6c85085e-5d9a-4a82-98e3-7d5538d7a2f6" />
 
 *Figure 10: DMZ Server Adapter 2: Internal Network ICDFA-WAN with a generated MAC address.*
 
@@ -151,29 +150,23 @@ Each adapter was attached to its network and a new MAC address was generated usi
 
 #### Ubuntu VRouter
 
-<img width="588" height="382" alt="11_DMZ_Adapter2_ICDFA-WAN_MAC" src="https://github.com/user-attachments/assets/6c85085e-5d9a-4a82-98e3-7d5538d7a2f6" />
-
+<img width="581" height="398" alt="12_VRouter_Adapter1_NAT_ICDFA-UPLINK_MAC" src="https://github.com/user-attachments/assets/8f278d8c-38ec-47a4-887f-7aaba7f153e9" />
 
 *Figure 11: VRouter Adapter 1: NAT Network ICDFA-UPLINK with a generated MAC address.*
 
 **Observation:** This is the only adapter attached to the NAT Network, giving the lab its uplink.
 
-<img width="581" height="398" alt="12_VRouter_Adapter1_NAT_ICDFA-UPLINK_MAC" src="https://github.com/user-attachments/assets/8f278d8c-38ec-47a4-887f-7aaba7f153e9" />
-
+<img width="590" height="398" alt="13_VRouter_Adapter2_ICDFA-WAN_MAC" src="https://github.com/user-attachments/assets/18af7369-5d7f-48ec-b270-9b5191ad1f06" />
 
 *Figure 12: VRouter Adapter 2: Internal Network ICDFA-WAN with a generated MAC address.*
 
 **Observation:** Adapter 2 connects the VRouter to the same WAN segment as the firewall.
 
-<img width="590" height="398" alt="13_VRouter_Adapter2_ICDFA-WAN_MAC" src="https://github.com/user-attachments/assets/18af7369-5d7f-48ec-b270-9b5191ad1f06" />
-
+<img width="593" height="391" alt="14_VRouter_Adapter3_Not_Attached" src="https://github.com/user-attachments/assets/b38cc4e9-26e5-42df-8a8d-7283de8abaf5" />
 
 *Figure 13: VRouter Adapter 3: disabled and not attached.*
 
 **Observation:** Unused adapter left disabled.
-
-<img width="593" height="391" alt="14_VRouter_Adapter3_Not_Attached" src="https://github.com/user-attachments/assets/b38cc4e9-26e5-42df-8a8d-7283de8abaf5" />
-
 
 <img width="582" height="394" alt="15_VRouter_Adapter4_Not_Attached" src="https://github.com/user-attachments/assets/954e730d-befd-46ab-a9f9-17af2e0837a7" />
 
