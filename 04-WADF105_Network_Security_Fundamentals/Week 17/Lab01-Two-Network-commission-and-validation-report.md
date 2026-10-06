@@ -275,7 +275,8 @@ The second part of the laboratory tested external connectivity from the Ubuntu C
 
 ### 5.3 Gateway retest
 
-![Figure 25](screenshots/27_Client_LAN_Gateway_Ping_Retest.png)
+<img width="932" height="434" alt="25_Client_Internet_Ping_1 1 1 1_FAIL" src="https://github.com/user-attachments/assets/1c7633d2-6b7d-481e-9688-81347f882ce9" />
+
 
 *Figure 25: Ubuntu Client: ping -c 4 10.10.10.1 after the DNS test.*
 
@@ -283,7 +284,8 @@ The second part of the laboratory tested external connectivity from the Ubuntu C
 
 ### 5.4 Web connectivity
 
-![Figure 26](screenshots/28_Client_Web_Test_curl_FAIL.png)
+<img width="923" height="433" alt="26_Client_DNS_Test_getent_opnsense org" src="https://github.com/user-attachments/assets/04ff7754-68b2-428a-bdde-0eddcfdb6374" />
+
 
 *Figure 26: Ubuntu Client: curl -I https://opnsense.org.*
 
@@ -293,25 +295,30 @@ The second part of the laboratory tested external connectivity from the Ubuntu C
 
 Wireshark 4.2.2 was opened on the Ubuntu Client and set to capture on the interface enp0s3. Display filters were then used to isolate each protocol.
 
-![Figure 27](screenshots/29_Wireshark_Launch_Window.png)
+<img width="920" height="422" alt="27_Client_LAN_Gateway_Ping_Retest" src="https://github.com/user-attachments/assets/9531b125-9116-4d37-8068-cbedc712e033" />
+
 
 *Figure 27: Wireshark opened from the terminal on the Ubuntu Client.*
 
 **Observation:** The application started and listed the available capture interfaces.
 
-![Figure 28](screenshots/30_Wireshark_Select_Interface_enp0s3.png)
+<img width="925" height="413" alt="28_Client_Web_Test_curl_FAIL" src="https://github.com/user-attachments/assets/f8dbcda2-3a03-4d12-9381-087640e7ee82" />
+
 
 *Figure 28: Wireshark welcome screen with the enp0s3 interface selected.*
 
 **Observation:** enp0s3 is the client adapter on ICDFA-LAN, so it carries all of the client traffic.
 
-![Figure 29](screenshots/31_Wireshark_Capture_Running.png)
+<img width="550" height="388" alt="29_Wireshark_Launch_Window" src="https://github.com/user-attachments/assets/52dc3fd1-4ea9-4e23-955a-9bd455f34a7e" />
+
 
 *Figure 29: Wireshark capturing live on enp0s3.*
 
 **Observation:** The capture shows DNS queries to 10.10.10.1, ARP traffic and repeated TCP SYN retransmissions to external addresses, which matches the failed internet and web tests.
 
-![Figure 30](screenshots/32_Wireshark_Capture_Stopped.png)
+
+<img width="955" height="442" alt="30_Wireshark_Select_Interface_enp0s3" src="https://github.com/user-attachments/assets/588ca0bb-a75a-433a-aa77-472ba4697d1b" />
+
 
 *Figure 30: Wireshark capture stopped.*
 
@@ -319,7 +326,8 @@ Wireshark 4.2.2 was opened on the Ubuntu Client and set to capture on the interf
 
 ### 6.1 ARP traffic
 
-![Figure 31](screenshots/33_Wireshark_ARP_Filter.png)
+<img width="926" height="410" alt="31_Wireshark_Capture_Running" src="https://github.com/user-attachments/assets/ecd4c982-60f3-4327-94cd-e076ee7fa0c8" />
+
 
 *Figure 31: Wireshark with the display filter arp.*
 
@@ -327,7 +335,7 @@ Wireshark 4.2.2 was opened on the Ubuntu Client and set to capture on the interf
 
 ### 6.2 DNS traffic
 
-![Figure 32](screenshots/34_Wireshark_DNS_Filter.png)
+<img width="925" height="419" alt="32_Wireshark_Capture_Stopped" src="https://github.com/user-attachments/assets/2bf3766c-fbda-4328-b6d6-53ed01cfa5a3" />
 
 *Figure 32: Wireshark with the display filter dns.*
 
@@ -337,17 +345,25 @@ Wireshark 4.2.2 was opened on the Ubuntu Client and set to capture on the interf
 
 The first ICMP capture attempt showed no packets because no ping had been sent while the capture was running. The ping was repeated during a fresh capture.
 
-![Figure 33](screenshots/35_Wireshark_ICMP_Filter_No_Packets.png)
+<img width="929" height="431" alt="33_Wireshark_ARP_Filter" src="https://github.com/user-attachments/assets/871a775a-f507-426b-b801-8600206524c7" />
 
 *Figure 33: Wireshark with the display filter icmp applied before any ping traffic was captured.*
 
 **Observation:** 0 packets displayed. This is why an additional capture was needed.
 
-![Figure 34](screenshots/37_Wireshark_ICMP_Echo_Request_Reply.png)
+<img width="923" height="433" alt="34_Wireshark_DNS_Filter" src="https://github.com/user-attachments/assets/88608db6-63e2-420d-ad4c-e19807ce8c18" />
+
 
 *Figure 34: Wireshark with the display filter icmp showing echo requests and replies.*
 
 **Observation:** 8 ICMP packets displayed: four echo requests from 10.10.10.188 and four echo replies from 10.10.10.1 (sequence numbers 1 to 4, TTL 64). Result: **PASS**.
+
+<img width="932" height="440" alt="35_Wireshark_ICMP_Filter_No_Packets" src="https://github.com/user-attachments/assets/5f7e7671-4784-4dff-b133-a623608c0071" />
+
+<img width="929" height="431" alt="36_Wireshark_ICMP_Filter_Live_Capture_Empty" src="https://github.com/user-attachments/assets/fc775c26-a0f8-4ea4-9282-17b049c7ecd6" />
+
+<img width="929" height="423" alt="37_Wireshark_ICMP_Echo_Request_Reply" src="https://github.com/user-attachments/assets/ae268262-6145-4571-b81e-cae88fd2a585" />
+
 
 ## 7. Default Gateway Explanation
 
