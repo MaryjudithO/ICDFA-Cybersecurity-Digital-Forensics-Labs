@@ -1,6 +1,5 @@
-# WADF105  lab01 Practical Laboratory Report
+# WADF105  lab 02:Virtual Lab Commissioning and Network Validation
 
-## Virtual Lab Commissioning and Network Validation
 
 | Item | Details |
 |------|---------|
