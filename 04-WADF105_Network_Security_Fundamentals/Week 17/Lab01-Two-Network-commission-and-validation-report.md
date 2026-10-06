@@ -284,6 +284,10 @@ The second part of the laboratory tested external connectivity from the Ubuntu C
 
 <img width="923" height="433" alt="26_Client_DNS_Test_getent_opnsense org" src="https://github.com/user-attachments/assets/04ff7754-68b2-428a-bdde-0eddcfdb6374" />
 
+<img width="920" height="422" alt="27_Client_LAN_Gateway_Ping_Retest" src="https://github.com/user-attachments/assets/9531b125-9116-4d37-8068-cbedc712e033" />
+
+
+<img width="925" height="413" alt="28_Client_Web_Test_curl_FAIL" src="https://github.com/user-attachments/assets/f8dbcda2-3a03-4d12-9381-087640e7ee82" />
 
 *Figure 26: Ubuntu Client: curl -I https://opnsense.org.*
 
@@ -292,13 +296,6 @@ The second part of the laboratory tested external connectivity from the Ubuntu C
 ## 6. Wireshark Analysis
 
 Wireshark 4.2.2 was opened on the Ubuntu Client and set to capture on the interface enp0s3. Display filters were then used to isolate each protocol.
-
-<img width="920" height="422" alt="27_Client_LAN_Gateway_Ping_Retest" src="https://github.com/user-attachments/assets/9531b125-9116-4d37-8068-cbedc712e033" />
-
-
-<img width="925" height="413" alt="28_Client_Web_Test_curl_FAIL" src="https://github.com/user-attachments/assets/f8dbcda2-3a03-4d12-9381-087640e7ee82" />
-
-
 
 <img width="550" height="388" alt="29_Wireshark_Launch_Window" src="https://github.com/user-attachments/assets/52dc3fd1-4ea9-4e23-955a-9bd455f34a7e" />
 
