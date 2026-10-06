@@ -1,179 +1,156 @@
-# WADF105 Lab 02: TCP/IP, Ethernet, ARP and Wireshark Analysis
+# ICDFA Lab 2: OPNsense Policy, Logging and Packet Analysis
+
+## Overview
+
+This laboratory focused on firewall policy testing, traffic filtering, logging analysis, state inspection, NAT verification, and packet capture correlation using OPNsense and Wireshark.
+
+The exercise demonstrated how firewall rules affect network traffic and how blocked and permitted connections can be identified through firewall logs and packet captures.
+
+All activities were conducted within an authorised and isolated laboratory environment using OPNsense as the perimeter firewall and Ubuntu as the client workstation.
+
+---
 
 ## Student Information
 
-**Name:** Maryjudith Chidinma Ogunaka  
-**Registration Number:** C11/26/FCDF/17151  
-**Programme:** ICDFA Fellowship in Cybersecurity and Digital Forensics  
-**Cohort:** 11  
-**Course:** WADF105 Network Security Fundamentals
+- Name: Maryjudith Chidinma Ogunaka
+- Programme: ICDFA Trainee | Cohort 11
+- Module: WADF105 Network Security Fundamentals
+- Lab Title: OPNsense Policy Logging and Packet Analysis
 
 ---
 
-## Introduction
+## Lab Environment
 
-This laboratory focused on the practical analysis of network communications using Wireshark within a virtual network environment. The exercise involved examining Ethernet communication, Address Resolution Protocol (ARP), Internet Control Message Protocol (ICMP), Domain Name System (DNS), and Transmission Control Protocol (TCP) traffic.
-
-The laboratory provided practical experience in packet capture, protocol analysis and network troubleshooting techniques commonly used in cybersecurity and digital forensics.
-
----
-
-## Laboratory Environment
-
-The practical environment consisted of:
-
-- Ubuntu Client
-- OPNsense Firewall
-
-Wireshark was installed on the Ubuntu Client and used as the primary packet capture and analysis tool throughout the exercise.
+| Component | Description |
+|------------|------------|
+| Firewall | OPNsense Firewall |
+| Client | Ubuntu Linux |
+| LAN Network | 10.10.10.0/24 |
+| Firewall LAN IP | 10.10.10.1 |
+| Environment | Authorised Virtual Lab |
 
 ---
 
-## Laboratory Objectives
+## Learning Objectives
 
-The objectives of this laboratory were to:
-
-- Examine Ethernet frame communication.
-- Analyse ARP requests and replies.
-- Observe ICMP echo traffic.
-- Investigate DNS name resolution.
-- Analyse TCP connection establishment.
-- Develop packet capture and analysis skills using Wireshark.
-- Understand communication across the TCP/IP protocol stack.
+- Understand firewall rule processing order.
+- Create and test firewall block policies.
+- Examine firewall log entries.
+- Correlate firewall logs with packet captures.
+- Analyse permitted and blocked traffic.
+- Understand firewall states and outbound NAT.
+- Restore normal network operation after testing.
 
 ---
 
 ## Activities Performed
 
-### Baseline Verification
+### Part A – Baseline Verification
 
-The following commands were used to verify the client network configuration:
+- Verified IP addressing
+- Verified network routes
+- Confirmed DNS functionality
+- Confirmed HTTP and HTTPS connectivity
 
-```bash
-ip -4 -br address
-```
+### Part B – Firewall Rule Review
 
-```bash
-ip -br link
-```
+- Examined LAN firewall rules
+- Reviewed top-down rule processing
 
-```bash
-ip route
-```
+### Part C – ICMP Blocking
 
-```bash
-ip neigh show
-```
+- Created an ICMP block rule
+- Confirmed successful ICMP blocking
+- Verified DNS and HTTPS remained operational
 
-```bash
-groups
-```
+### Part D – HTTP Blocking
 
-```bash
-wireshark --version | head -n 1
-```
+- Created an outbound HTTP block rule
+- Verified HTTP traffic was blocked
+- Confirmed HTTPS traffic remained permitted
 
-### ARP Analysis
+### Part E – Firewall Log Analysis
 
-- Generated ARP traffic.
-- Captured ARP Requests.
-- Captured ARP Replies.
-- Examined MAC address resolution.
+- Examined OPNsense log entries
+- Identified blocked traffic
+- Verified matching firewall rules
 
-### ICMP Analysis
+### Part F – Wireshark Packet Analysis
 
-- Generated ICMP Echo Requests and Echo Replies.
-- Analysed packet flow between hosts.
-- Verified network connectivity.
+- Captured blocked ICMP traffic
+- Captured blocked HTTP traffic
+- Captured permitted HTTPS traffic
+- Analysed protocol behaviour
 
-### DNS Analysis
+### Part G – State and NAT Analysis
 
-- Generated DNS queries.
-- Captured DNS responses.
-- Examined domain name resolution.
+- Examined firewall states
+- Verified outbound NAT operation
+- Identified translated connections
 
-### TCP Analysis
+### Part H – Environment Restoration
 
-- Generated web traffic using HTTP/HTTPS requests.
-- Captured TCP packets.
-- Identified the TCP three-way handshake (SYN, SYN-ACK, ACK).
+- Disabled temporary firewall rules
+- Confirmed connectivity restoration
+- Returned lab environment to baseline state
 
 ---
 
-## Evidence Collected
+## Tools Used
 
-The laboratory evidence included:
-
-- Baseline verification screenshots
-- ARP analysis screenshots
-- ICMP analysis screenshots
-- DNS query and response screenshots
-- TCP handshake screenshots
-- Wireshark packet capture evidence
-- Exported packet capture file
-
----
-
-## Packet Capture File
-
-The complete packet capture was successfully exported and saved as:
-
-```text
-C11-26-FCDF-17151_Lab02_Evidence.pcapng
-```
-
-The capture file contains evidence of:
-
-- ARP communications
-- ICMP traffic
-- DNS queries and responses
-- TCP communication sessions
-
----
-
-## Tools and Technologies
-
-- Oracle VM VirtualBox
+- OPNsense
 - Ubuntu Linux
-- OPNsense Firewall
 - Wireshark
-- TCP/IP
-- Ethernet
-- ARP
-- ICMP
-- DNS
-- TCP
+- Curl
+- Ping
+- Firewall Logs
 
 ---
 
-## Learning Outcomes
+## Key Findings
 
-Upon completion of this laboratory, the following skills were developed:
-
-- Network packet capture and analysis
-- Protocol troubleshooting
-- Ethernet and ARP investigation
-- DNS traffic analysis
-- TCP handshake analysis
-- Wireshark proficiency
-- Network communication analysis
+- Firewall rules are processed from top to bottom.
+- Specific block rules must be placed above allow rules.
+- ICMP traffic can be blocked without affecting HTTPS.
+- Blocked TCP connections produce retransmissions in Wireshark.
+- HTTPS traffic completed a normal TCP handshake.
+- Firewall logs clearly identify blocked connections.
+- Outbound NAT translates private addresses for internet communication.
+- Disabled rules successfully restored connectivity.
 
 ---
 
-## Result
+## Screenshots
 
-✅ Baseline network configuration verified
+- Figure 1: Baseline connectivity verification
+- Figure 2: Firewall rules configuration
+- Figure 3: ICMP blocking verification
+- Figure 4: HTTP blocking verification
+- Figure 5: Firewall log evidence
+- Figure 6: Wireshark packet capture
+- Figure 7: State table analysis
+- Figure 8: Restored connectivity verification
 
-✅ ARP Requests and Replies analysed
+---
 
-✅ ICMP communication analysed
+## Conclusion
 
-✅ DNS queries and responses analysed
+The laboratory successfully demonstrated how firewall policies influence network communications and how network administrators can use firewall logs, state tables, NAT information, and packet captures to understand and troubleshoot network behaviour. The exercise provided practical experience with OPNsense firewall administration and reinforced the importance of logging and packet analysis in network security operations.
 
-✅ TCP three-way handshake analysed
+---
 
-✅ Packet capture evidence exported successfully
+## ⚠️ Authorisation and Ethical Use
 
-✅ Laboratory completed successfully
+This laboratory exercise was conducted as part of the ICDFA Cybersecurity and Digital Forensics Programme.
 
+All testing was performed exclusively against authorised laboratory systems within an isolated training environment.
 
+The techniques demonstrated within this repository should only be used on systems for which explicit permission has been granted.
+
+---
+
+## Author
+
+Maryjudith Chidinma Ogunaka
+
+ICDFA Trainee | Cohort 11
