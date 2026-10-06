@@ -100,8 +100,6 @@ Each adapter was attached to its network and a new MAC address was generated usi
 
 <img width="584" height="399" alt="04_Client_Adapter1_ICDFA-LAN_MAC" src="https://github.com/user-attachments/assets/6cd65668-dc51-4781-8fa8-e4aa35ecfaa7" />
 
-<img width="577" height="377" alt="05_Firewall_Adapter1_ICDFA-WAN_MAC" src="https://github.com/user-attachments/assets/32c84792-4dda-4a01-9808-2b20875ab118" />
-
 *Figure 4: Ubuntu Client (ICDFA-NSLAB), Adapter 1: Internal Network ICDFA-LAN with a generated MAC address.*
 
 **Observation:** The client has a single adapter on ICDFA-LAN.
