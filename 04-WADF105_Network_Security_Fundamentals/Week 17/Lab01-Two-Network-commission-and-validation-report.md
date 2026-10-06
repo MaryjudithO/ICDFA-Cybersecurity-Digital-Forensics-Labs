@@ -298,9 +298,9 @@ Wireshark 4.2.2 was opened on the Ubuntu Client and set to capture on the interf
 
 <img width="925" height="413" alt="28_Client_Web_Test_curl_FAIL" src="https://github.com/user-attachments/assets/f8dbcda2-3a03-4d12-9381-087640e7ee82" />
 
+
+
 <img width="550" height="388" alt="29_Wireshark_Launch_Window" src="https://github.com/user-attachments/assets/52dc3fd1-4ea9-4e23-955a-9bd455f34a7e" />
-
-
 
 *Figure 27: Wireshark opened from the terminal on the Ubuntu Client.*
 
@@ -312,16 +312,14 @@ Wireshark 4.2.2 was opened on the Ubuntu Client and set to capture on the interf
 
 **Observation:** enp0s3 is the client adapter on ICDFA-LAN, so it carries all of the client traffic.
 
-
+<img width="955" height="442" alt="30_Wireshark_Select_Interface_enp0s3" src="https://github.com/user-attachments/assets/588ca0bb-a75a-433a-aa77-472ba4697d1b" />
 
 
 *Figure 29: Wireshark capturing live on enp0s3.*
 
 **Observation:** The capture shows DNS queries to 10.10.10.1, ARP traffic and repeated TCP SYN retransmissions to external addresses, which matches the failed internet and web tests.
 
-
-<img width="955" height="442" alt="30_Wireshark_Select_Interface_enp0s3" src="https://github.com/user-attachments/assets/588ca0bb-a75a-433a-aa77-472ba4697d1b" />
-
+<img width="926" height="410" alt="31_Wireshark_Capture_Running" src="https://github.com/user-attachments/assets/ecd4c982-60f3-4327-94cd-e076ee7fa0c8" />
 
 *Figure 30: Wireshark capture stopped.*
 
@@ -329,8 +327,9 @@ Wireshark 4.2.2 was opened on the Ubuntu Client and set to capture on the interf
 
 ### 6.1 ARP traffic
 
-<img width="926" height="410" alt="31_Wireshark_Capture_Running" src="https://github.com/user-attachments/assets/ecd4c982-60f3-4327-94cd-e076ee7fa0c8" />
+<img width="925" height="419" alt="32_Wireshark_Capture_Stopped" src="https://github.com/user-attachments/assets/2bf3766c-fbda-4328-b6d6-53ed01cfa5a3" />
 
+<img width="929" height="431" alt="33_Wireshark_ARP_Filter" src="https://github.com/user-attachments/assets/871a775a-f507-426b-b801-8600206524c7" />
 
 *Figure 31: Wireshark with the display filter arp.*
 
@@ -338,7 +337,7 @@ Wireshark 4.2.2 was opened on the Ubuntu Client and set to capture on the interf
 
 ### 6.2 DNS traffic
 
-<img width="925" height="419" alt="32_Wireshark_Capture_Stopped" src="https://github.com/user-attachments/assets/2bf3766c-fbda-4328-b6d6-53ed01cfa5a3" />
+<img width="923" height="433" alt="34_Wireshark_DNS_Filter" src="https://github.com/user-attachments/assets/88608db6-63e2-420d-ad4c-e19807ce8c18" />
 
 *Figure 32: Wireshark with the display filter dns.*
 
@@ -348,17 +347,12 @@ Wireshark 4.2.2 was opened on the Ubuntu Client and set to capture on the interf
 
 The first ICMP capture attempt showed no packets because no ping had been sent while the capture was running. The ping was repeated during a fresh capture.
 
-<img width="929" height="431" alt="33_Wireshark_ARP_Filter" src="https://github.com/user-attachments/assets/871a775a-f507-426b-b801-8600206524c7" />
+
+<img width="929" height="431" alt="36_Wireshark_ICMP_Filter_Live_Capture_Empty" src="https://github.com/user-attachments/assets/fc775c26-a0f8-4ea4-9282-17b049c7ecd6" />
 
 *Figure 33: Wireshark with the display filter icmp applied before any ping traffic was captured.*
 
 **Observation:** 0 packets displayed. This is why an additional capture was needed.
-
-<img width="923" height="433" alt="34_Wireshark_DNS_Filter" src="https://github.com/user-attachments/assets/88608db6-63e2-420d-ad4c-e19807ce8c18" />
-
-
-
-<img width="929" height="431" alt="36_Wireshark_ICMP_Filter_Live_Capture_Empty" src="https://github.com/user-attachments/assets/fc775c26-a0f8-4ea4-9282-17b049c7ecd6" />
 
 <img width="929" height="423" alt="37_Wireshark_ICMP_Echo_Request_Reply" src="https://github.com/user-attachments/assets/ae268262-6145-4571-b81e-cae88fd2a585" />
 
