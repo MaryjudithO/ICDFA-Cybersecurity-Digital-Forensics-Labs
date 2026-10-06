@@ -98,5 +98,5 @@ Screenshots are numbered sequentially and labeled by the lab step / task they do
 
 ---
 
-## 📌 Disclaimer
+##  Disclaimer
 All scanning and enumeration activities were performed exclusively against an authorized, isolated lab target (Metasploitable 2) as part of the ICDFA training programme. No unauthorized systems were accessed or scanned.
