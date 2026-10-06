@@ -239,6 +239,10 @@ After the addressing and connectivity checks passed, a snapshot named LAB-BASELI
 
 <img width="959" height="503" alt="24_VM_Snapshots_LAB-BASELINE-VALIDATED" src="https://github.com/user-attachments/assets/8f4f9124-4c14-4bae-a23c-6570fb15d437" />
 
+<img width="926" height="434" alt="22_Client_Ping_LAN_and_DMZ_Gateways" src="https://github.com/user-attachments/assets/063e4dda-2967-4849-8d96-b496d42de095" />
+
+<img width="926" height="436" alt="23_Client_Ping_DMZ_and_WAN_Interfaces" src="https://github.com/user-attachments/assets/c115d8c6-b559-4fa8-8c87-e93c256485c2" />
+
 *Figure 22: VirtualBox Snapshots view showing LAB-BASELINE-VALIDATED on all four virtual machines.*
 
 **Observation:** Each machine lists LAB-BASELINE-VALIDATED, taken on 29 September 2026 at 10:45 AM.
@@ -249,7 +253,7 @@ The second part of the laboratory tested external connectivity from the Ubuntu C
 
 ### 5.1 Internet reachability
 
-<img width="926" height="434" alt="22_Client_Ping_LAN_and_DMZ_Gateways" src="https://github.com/user-attachments/assets/063e4dda-2967-4849-8d96-b496d42de095" />
+<img width="932" height="434" alt="25_Client_Internet_Ping_1 1 1 1_FAIL" src="https://github.com/user-attachments/assets/1c7633d2-6b7d-481e-9688-81347f882ce9" />
 
 *Figure 23: Ubuntu Client: ping -c 4 1.1.1.1.*
 
@@ -258,7 +262,8 @@ The second part of the laboratory tested external connectivity from the Ubuntu C
 ### 5.2 DNS resolution
 
 
-<img width="926" height="436" alt="23_Client_Ping_DMZ_and_WAN_Interfaces" src="https://github.com/user-attachments/assets/c115d8c6-b559-4fa8-8c87-e93c256485c2" />
+<img width="923" height="433" alt="26_Client_DNS_Test_getent_opnsense org" src="https://github.com/user-attachments/assets/04ff7754-68b2-428a-bdde-0eddcfdb6374" />
+
 
 *Figure 24: Ubuntu Client: getent hosts opnsense.org.*
 
@@ -266,18 +271,14 @@ The second part of the laboratory tested external connectivity from the Ubuntu C
 
 ### 5.3 Gateway retest
 
-<img width="932" height="434" alt="25_Client_Internet_Ping_1 1 1 1_FAIL" src="https://github.com/user-attachments/assets/1c7633d2-6b7d-481e-9688-81347f882ce9" />
 
+<img width="920" height="422" alt="27_Client_LAN_Gateway_Ping_Retest" src="https://github.com/user-attachments/assets/9531b125-9116-4d37-8068-cbedc712e033" />
 
 *Figure 25: Ubuntu Client: ping -c 4 10.10.10.1 after the DNS test.*
 
 **Observation:** The LAN gateway still replied to all 4 packets with 0% packet loss, so the failure was not on the local LAN segment.
 
 ### 5.4 Web connectivity
-
-<img width="923" height="433" alt="26_Client_DNS_Test_getent_opnsense org" src="https://github.com/user-attachments/assets/04ff7754-68b2-428a-bdde-0eddcfdb6374" />
-
-<img width="920" height="422" alt="27_Client_LAN_Gateway_Ping_Retest" src="https://github.com/user-attachments/assets/9531b125-9116-4d37-8068-cbedc712e033" />
 
 
 <img width="925" height="413" alt="28_Client_Web_Test_curl_FAIL" src="https://github.com/user-attachments/assets/f8dbcda2-3a03-4d12-9381-087640e7ee82" />
