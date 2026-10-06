@@ -1,7 +1,7 @@
 # WADF105  lab 01:Virtual Lab Commissioning and Network Validation
 
 
-| Item | Details |
+| Item | Details|
 |------|---------|
 | Student Name | Maryjudith Chidinma Ogunaka |
 | Registration Number | C11FCDF26/17151 |
