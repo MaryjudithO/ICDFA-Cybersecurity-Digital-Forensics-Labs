@@ -86,7 +86,7 @@ A NAT Network was needed for the uplink. The default network (NatNetwork) was re
 
 <img width="959" height="491" alt="03_NAT_Network_Renamed_ICDFA-UPLINK" src="https://github.com/user-attachments/assets/311aac59-672a-452c-af5f-c58ca5fd58e4" />
 
-<img width="584" height="399" alt="04_Client_Adapter1_ICDFA-LAN_MAC" src="https://github.com/user-attachments/assets/6cd65668-dc51-4781-8fa8-e4aa35ecfaa7" />
+
 
 *Figure 3: NAT Network renamed to ICDFA-UPLINK (10.0.2.0/24, DHCP enabled).*
 
@@ -98,6 +98,7 @@ Each adapter was attached to its network and a new MAC address was generated usi
 
 #### Ubuntu Client
 
+<img width="584" height="399" alt="04_Client_Adapter1_ICDFA-LAN_MAC" src="https://github.com/user-attachments/assets/6cd65668-dc51-4781-8fa8-e4aa35ecfaa7" />
 
 <img width="577" height="377" alt="05_Firewall_Adapter1_ICDFA-WAN_MAC" src="https://github.com/user-attachments/assets/32c84792-4dda-4a01-9808-2b20875ab118" />
 
