@@ -1,158 +1,109 @@
-# ICDFA Lab 2: OPNsense Policy, Logging and Packet Analysis
+# OPNsense Firewall Policy Logging & Traffic Analysis
+
 
 ## Overview
 
-This laboratory focused on firewall policy testing, traffic filtering, logging analysis, state inspection, NAT verification, and packet capture correlation using OPNsense and Wireshark.
+Hands-on lab for **WADF105 – Network Security Fundamentals** (ICDFA Fellowship in Cybersecurity and Digital Forensics, Cohort 11). It covers firewall policy testing, traffic filtering and log review on **OPNsense**, using an Ubuntu client to generate and verify traffic. All activities were performed in an authorised, isolated virtual lab.
 
-The exercise demonstrated how firewall rules affect network traffic and how blocked and permitted connections can be identified through firewall logs and packet captures.
+| | |
+|---|---|
+| **Name** | Maryjudith Chidinma Ogunaka |
+| **Registration No.** | C11/26/FCDF/17151 |
+| **Programme** | ICDFA Fellowship in Cybersecurity and Digital Forensics, Cohort 11 |
+| **Module** | WADF105 Network Security Fundamentals |
+| **Lab** | Lab 02 – OPNsense Policy Logging and Packet Analysis |
 
-All activities were conducted within an authorised and isolated laboratory environment using OPNsense as the perimeter firewall and Ubuntu as the client workstation.
-
----
-
-## Student Information
- 
-- Name: Maryjudith Chidinma Ogunaka
-- Registration Number: C11/26/FCDF/17151
-- Programme: ICDFA Trainee | Cohort 11
-- Module: WADF105 Network Security Fundamentals
-- Lab Title: OPNsense Policy Logging and Packet Analysis
-
+> Full write-up: **[REPORT.md](REPORT.md)** · Evidence: **[screenshots/](screenshots/)**
 
 ---
+
+## Objectives
+
+- Verify baseline addressing and connectivity (ICMP, DNS, HTTP, HTTPS) through the firewall
+- Review the LAN firewall rule set and understand top-down rule processing
+- Create and apply a targeted **ICMP block** rule (LAN → `1.1.1.1`)
+- Confirm that unrelated services (DNS, HTTPS) are unaffected by a protocol-specific rule
+- Create an **outbound HTTP (TCP/80) block** rule while keeping HTTPS (TCP/443) allowed
+- Review traffic in **Firewall → Log Files → Live View** and relate entries to rules
+- Disable the lab rules and restore the network to a known-good state
 
 ## Lab Environment
 
-| Component | Description |
-|------------|------------|
-| Firewall | OPNsense Firewall |
-| Client | Ubuntu Linux |
-| LAN Network | 10.10.10.0/24 |
-| Firewall LAN IP | 10.10.10.1 |
-| Environment | Authorised Virtual Lab |
+| Component | Details |
+|---|---|
+| Firewall | OPNsense 26.7 (`icdfa-nslab-firewall-v1.icdfa.test`) |
+| Client | Ubuntu (`icdfa-nslab-client-v1`), `10.10.10.157/24` |
+| Upstream | Ubuntu VRouter (gateway `172.16.100.1`) |
+| LAN | `10.10.10.0/24`, firewall LAN IP `10.10.10.1` |
+| WAN | `172.16.100.2/30` |
 
----
+## Rules Implemented
 
-## Learning Objectives
+| # | Description | Action | Proto | Source | Destination | Port |
+|---|---|---|---|---|---|---|
+| 1 | `LAB2 BLOCK ICMP TO 1.1.1.1` | Block | ICMP | LAN net | 1.1.1.1 | any |
+| 2 | `LAB2 BLOCK OUTBOUND HTTP` | Block | TCP | LAN net | any | 80 (HTTP) |
 
-- Understand firewall rule processing order.
-- Create and test firewall block policies.
-- Examine firewall log entries.
-- Correlate firewall logs with packet captures.
-- Analyse permitted and blocked traffic.
-- Understand firewall states and outbound NAT.
-- Restore normal network operation after testing.
+## Test Commands
 
----
-
-## Activities Performed
-
-### Part A – Baseline Verification
-
-- Verified IP addressing
-- Verified network routes
-- Confirmed DNS functionality
-- Confirmed HTTP and HTTPS connectivity
-
-### Part B – Firewall Rule Review
-
-- Examined LAN firewall rules
-- Reviewed top-down rule processing
-
-### Part C – ICMP Blocking
-
-- Created an ICMP block rule
-- Confirmed successful ICMP blocking
-- Verified DNS and HTTPS remained operational
-
-### Part D – HTTP Blocking
-
-- Created an outbound HTTP block rule
-- Verified HTTP traffic was blocked
-- Confirmed HTTPS traffic remained permitted
-
-### Part E – Firewall Log Analysis
-
-- Examined OPNsense log entries
-- Identified blocked traffic
-- Verified matching firewall rules
-
-### Part F – Wireshark Packet Analysis
-
-- Captured blocked ICMP traffic
-- Captured blocked HTTP traffic
-- Captured permitted HTTPS traffic
-- Analysed protocol behaviour
-
-### Part G – State and NAT Analysis
-
-- Examined firewall states
-- Verified outbound NAT operation
-- Identified translated connections
-
-### Part H – Environment Restoration
-
-- Disabled temporary firewall rules
-- Confirmed connectivity restoration
-- Returned lab environment to baseline state
-
----
+```bash
+ip -4 -br address              # client addressing
+ping -c 4 10.10.10.1           # reach firewall
+ping -c 4 1.1.1.1              # ICMP to internet
+nslookup example.com           # DNS
+curl -I http://example.com     # HTTP
+curl -I https://example.com    # HTTPS
+```
 
 ## Tools Used
 
-- OPNsense
-- Ubuntu Linux
-- Wireshark
-- Curl
-- Ping
-- Firewall Logs
+- OPNsense (web GUI and console)
+- Ubuntu Linux client
+- `ping`, `nslookup`, `getent`, `curl`
+- OPNsense Firewall Log Files / Live View
 
----
+## Results at a Glance
 
-## Key Findings
+| Test | Expected | Observed |
+|---|---|---|
+| Baseline ICMP / DNS / HTTP / HTTPS | Pass | Pass |
+| ICMP to 1.1.1.1 after rule applied | Blocked | 100% packet loss |
+| DNS after ICMP rule | Unaffected | Resolves |
+| HTTPS after ICMP rule | Unaffected | `HTTP/2 200` |
+| HTTPS after HTTP rule | Unaffected | `HTTP/2 200` |
+| Connectivity after rules disabled | Restored | Rules disabled |
 
-- Firewall rules are processed from top to bottom.
-- Specific block rules must be placed above allow rules.
-- ICMP traffic can be blocked without affecting HTTPS.
-- Blocked TCP connections produce retransmissions in Wireshark.
-- HTTPS traffic completed a normal TCP handshake.
-- Firewall logs clearly identify blocked connections.
-- Outbound NAT translates private addresses for internet communication.
-- Disabled rules successfully restored connectivity.
 
----
+## Repository Structure
 
-## Screenshots
+```
+.
+├── README.md
+├── REPORT.md
+└── screenshots/
+    ├── 00a_… – 02_…    Environment & client verification
+    ├── 03_… – 06_…     Baseline tests
+    ├── 07a_… – 08c_…   ICMP rule creation & testing
+    ├── 09_… – 11_…     ICMP block verification, DNS/HTTPS checks
+    ├── 12a_… – 14_…    HTTP rule creation & testing
+    └── 15_… – 16_…     Live View & restoration
+```
 
-- Figure 1: Baseline connectivity verification
-- Figure 2: Firewall rules configuration
-- Figure 3: ICMP blocking verification
-- Figure 4: HTTP blocking verification
-- Figure 5: Firewall log evidence
-- Figure 6: Wireshark packet capture
-- Figure 7: State table analysis
-- Figure 8: Restored connectivity verification
+## Key Takeaways
 
----
+- Firewall rules are **protocol- and port-specific**: blocking ICMP does not affect DNS or HTTPS.
+- Firewall rules are evaluated **top to bottom**, so rule order matters.
+- Rules take effect only after **Apply changes** is clicked in OPNsense.
+- Blocking HTTP (TCP/80) while permitting HTTPS (TCP/443) shows port-level policy control.
+- Enable **Log** on rules whose matches you need to see in Live View.
+- Always **restore** lab rules at the end to leave the environment in a known state.
 
-## Conclusion
+## Authorisation and Ethical Use
 
-The laboratory successfully demonstrated how firewall policies influence network communications and how network administrators can use firewall logs, state tables, NAT information, and packet captures to understand and troubleshoot network behaviour. The exercise provided practical experience with OPNsense firewall administration and reinforced the importance of logging and packet analysis in network security operations.
-
----
-
-## ⚠️ Authorisation and Ethical Use
-
-This laboratory exercise was conducted as part of the ICDFA Cybersecurity and Digital Forensics Programme.
-
-All testing was performed exclusively against authorised laboratory systems within an isolated training environment.
-
-The techniques demonstrated within this repository should only be used on systems for which explicit permission has been granted.
-
----
+This lab was completed as part of the ICDFA Cybersecurity and Digital Forensics Programme. All testing was performed only against authorised systems in an isolated training environment. Use these techniques only on systems you have explicit permission to test.
 
 ## Author
 
-Maryjudith Chidinma Ogunaka
+**Maryjudith Chidinma Ogunaka**
+ICDFA Fellowship in Cybersecurity and Digital Forensics | Cohort 11
 
-ICDFA Trainee | Cohort 11
