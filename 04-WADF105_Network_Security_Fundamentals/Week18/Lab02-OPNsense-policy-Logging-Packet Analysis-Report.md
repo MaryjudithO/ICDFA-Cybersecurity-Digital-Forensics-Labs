@@ -46,25 +46,27 @@ OPNsense acted as the gateway and security device; the Ubuntu client generated t
 
 **Firewall console (before restore)**
 
-![00a_firewall_console_before_restore](screenshots/00a_firewall_console_before_restore.png)
+<img width="368" height="205" alt="00a_firewall_console_before_restore" src="https://github.com/user-attachments/assets/4860870b-f119-4296-8266-b8d5a7e1fa55" />
 
 *Figure: `00a_firewall_console_before_restore.png`*
 
 **Firewall LAN/WAN restored**
 
-![00b_firewall_lan_wan_restored](screenshots/00b_firewall_lan_wan_restored.png)
+<img width="362" height="214" alt="00b_firewall_lan_wan_restored" src="https://github.com/user-attachments/assets/0954048a-634b-4763-b0f9-11f04b65bdee" />
 
 *Figure: `00b_firewall_lan_wan_restored.png`*
 
 **Client IP**
 
-![01_client_ip_verification](screenshots/01_client_ip_verification.png)
+<img width="926" height="426" alt="01_client_ip_verification" src="https://github.com/user-attachments/assets/4716e604-283f-4d47-a7b0-3863e31e3e5a" />
+
 
 *Figure: `01_client_ip_verification.png`*
 
 **Client → Firewall ping**
 
-![02_client_to_firewall_ping](screenshots/02_client_to_firewall_ping.png)
+<img width="925" height="429" alt="02_client_to_firewall_ping" src="https://github.com/user-attachments/assets/3939be2e-39a6-491e-9ca9-42f8c90504cb" />
+
 
 *Figure: `02_client_to_firewall_ping.png`*
 
@@ -93,7 +95,8 @@ OPNsense acted as the gateway and security device; the Ubuntu client generated t
 
 **ICMP**
 
-![03_baseline_icmp](screenshots/03_baseline_icmp.png)
+<img width="926" height="401" alt="03_baseline_icmp" src="https://github.com/user-attachments/assets/d4fe1341-1a05-404f-ad42-31b71b6338de" />
+
 
 *Figure: `03_baseline_icmp.png`*
 
@@ -101,17 +104,22 @@ OPNsense acted as the gateway and security device; the Ubuntu client generated t
 
 ![04_baseline_dns](screenshots/04_baseline_dns.png)
 
+<img width="930" height="430" alt="04_baseline_dns" src="https://github.com/user-attachments/assets/f70823f4-bf4c-4569-9105-768735338be6" />
+
 *Figure: `04_baseline_dns.png`*
 
 **HTTP**
 
-![05_baseline_http](screenshots/05_baseline_http.png)
+<img width="927" height="432" alt="05_baseline_http" src="https://github.com/user-attachments/assets/2d73efc7-cfef-4151-9ff7-fdb1de0ccbaf" />
+
 
 *Figure: `05_baseline_http.png`*
 
+
 **HTTPS**
 
-![06_baseline_https](screenshots/06_baseline_https.png)
+<img width="930" height="430" alt="06_baseline_https" src="https://github.com/user-attachments/assets/8706b80c-c66d-4d27-aed5-50bb6f66cead" />
+
 
 *Figure: `06_baseline_https.png`*
 
@@ -121,50 +129,58 @@ Rule `LAB2 BLOCK ICMP TO 1.1.1.1`: **Action** Block, **Interface** LAN, **Direct
 
 **Login**
 
-![07a_opnsense_login](screenshots/07a_opnsense_login.png)
+<img width="928" height="440" alt="07a_opnsense_login" src="https://github.com/user-attachments/assets/1390475e-100d-4b23-9ed8-5dcbddeb18b5" />
 
 *Figure: `07a_opnsense_login.png`*
 
 **Dashboard**
 
-![07b_opnsense_dashboard](screenshots/07b_opnsense_dashboard.png)
+<img width="925" height="425" alt="07b_opnsense_dashboard" src="https://github.com/user-attachments/assets/0a9cee1a-feb7-4c9f-8048-46d3ed9e736b" />
 
 *Figure: `07b_opnsense_dashboard.png`*
 
 **Default LAN rules**
 
-![07c_firewall_rules_default](screenshots/07c_firewall_rules_default.png)
+<img width="925" height="425" alt="07c_firewall_rules_default" src="https://github.com/user-attachments/assets/08c0c21e-7d4d-4224-adeb-657325cbefcb" />
+
 
 *Figure: `07c_firewall_rules_default.png`*
 
 
 **Rule: organisation**
 
-![07d_icmp_rule_organisation](screenshots/07d_icmp_rule_organisation.png)
+<img width="455" height="314" alt="07d_icmp_rule_organisation" src="https://github.com/user-attachments/assets/9e2e287d-428b-4fe4-9dec-28ea376e6675" />
+
 
 *Figure: `07d_icmp_rule_organisation.png`*
 
 **Rule: filter**
 
-![07e_icmp_rule_filter](screenshots/07e_icmp_rule_filter.png)
+<img width="446" height="314" alt="07e_icmp_rule_filter" src="https://github.com/user-attachments/assets/c20a80d3-79e0-4fbc-9cf2-808e8599c624" />
+
 
 *Figure: `07e_icmp_rule_filter.png`*
 
 **Rule: destination lookup**
 
-![07f_icmp_rule_destination_lookup](screenshots/07f_icmp_rule_destination_lookup.png)
+<img width="452" height="311" alt="07f_icmp_rule_destination_lookup" src="https://github.com/user-attachments/assets/8ba1e8d0-a519-4ac3-9067-3e554641a716" />
+
+
+<img width="452" height="311" alt="07f_icmp_rule_destination_lookup" src="https://github.com/user-attachments/assets/1609cc18-e1b9-4c57-b2e2-180320228230" />
 
 *Figure: `07f_icmp_rule_destination_lookup.png`*
 
 **Rule: destination set**
 
-![08b_icmp_rule_destination_set](screenshots/08b_icmp_rule_destination_set.png)
+
+<img width="455" height="314" alt="08b_icmp_rule_destination_set" src="https://github.com/user-attachments/assets/2df3123c-de66-464d-966a-29947e52b332" />
 
 *Figure: `08b_icmp_rule_destination_set.png`*
 
 **Rule list pending apply**
 
-![07g_icmp_rule_list_pending_apply](screenshots/07g_icmp_rule_list_pending_apply.png)
+<img width="927" height="429" alt="07g_icmp_rule_list_pending_apply" src="https://github.com/user-attachments/assets/c393086b-5493-4d35-97da-f1e56da1999f" />
+
 
 *Figure: `07g_icmp_rule_list_pending_apply.png`*
 
@@ -173,13 +189,16 @@ Ping tests while the rule was being configured (before the change was applied) s
 
 **Test 1**
 
-![08a_icmp_test_after_rule_creation](screenshots/08a_icmp_test_after_rule_creation.png)
+<img width="929" height="430" alt="08a_icmp_test_after_rule_creation" src="https://github.com/user-attachments/assets/716a704d-ac60-4187-b72a-aed986022145" />
+
 
 *Figure: `08a_icmp_test_after_rule_creation.png`*
 
 **Test 2**
 
-![08c_icmp_retest](screenshots/08c_icmp_retest.png)
+
+<img width="929" height="437" alt="08c_icmp_retest" src="https://github.com/user-attachments/assets/83b9d224-77ce-4791-ad55-9360f8451b90" />
+
 
 *Figure: `08c_icmp_retest.png`*
 
@@ -192,7 +211,8 @@ ping -c 4 1.1.1.1
 
 **ICMP blocked**
 
-![09_icmp_block_verification](screenshots/09_icmp_block_verification.png)
+<img width="928" height="440" alt="09_icmp_block_verification" src="https://github.com/user-attachments/assets/a8cf814e-f7e9-4a64-8e6a-6b7807f2a6e9" />
+
 
 *Figure: `09_icmp_block_verification.png`*
 
@@ -203,25 +223,27 @@ ping -c 4 1.1.1.1
 
 **DNS (SERVFAIL observed, see §7)**
 
-![10a_dns_servfail_observed](screenshots/10a_dns_servfail_observed.png)
+<img width="929" height="419" alt="10a_dns_servfail_observed" src="https://github.com/user-attachments/assets/2a4b46f6-4e5a-41e1-b079-7cb1a8efafff" />
 
 *Figure: `10a_dns_servfail_observed.png`*
 
 **DNS (resolved)**
 
-![10b_dns_still_working](screenshots/10b_dns_still_working.png)
+<img width="919" height="417" alt="10b_dns_still_working" src="https://github.com/user-attachments/assets/84d1f29a-918c-43fe-9822-38dc47afb389" />
+
 
 *Figure: `10b_dns_still_working.png`*
 
 **DNS / HTTPS recheck**
 
-![10c_dns_https_recheck](screenshots/10c_dns_https_recheck.png)
+<img width="928" height="432" alt="10c_dns_https_recheck" src="https://github.com/user-attachments/assets/e105dbbb-1e90-468d-86fc-6a0a00b113f5" />
+
 
 *Figure: `10c_dns_https_recheck.png`*
 
 **HTTPS**
 
-![11_https_still_working](screenshots/11_https_still_working.png)
+<img width="926" height="431" alt="11_https_still_working" src="https://github.com/user-attachments/assets/cd274c70-1342-4110-9012-5434ab7e382a" />
 
 *Figure: `11_https_still_working.png`*
 
@@ -233,37 +255,41 @@ Rule `LAB2 BLOCK OUTBOUND HTTP`: **Action** Block, **Interface** LAN, **Protocol
 
 **Rule: organisation**
 
-![12a_http_rule_organisation](screenshots/12a_http_rule_organisation.png)
+<img width="455" height="305" alt="12a_http_rule_organisation" src="https://github.com/user-attachments/assets/c2202d2b-8956-48ed-a86e-293f34e49132" />
 
 *Figure: `12a_http_rule_organisation.png`*
 
 **Rule: filter (port 80)**
 
-![12c_http_rule_filter_port80](screenshots/12c_http_rule_filter_port80.png)
+<img width="450" height="310" alt="12c_http_rule_filter_port80" src="https://github.com/user-attachments/assets/c0374a8a-f47a-4be5-a731-59d4adfa8452" />
+
 
 *Figure: `12c_http_rule_filter_port80.png`*
 
 **Rules list**
 
-![12b_rules_list_two_rules](screenshots/12b_rules_list_two_rules.png)
+<img width="926" height="387" alt="12b_rules_list_two_rules" src="https://github.com/user-attachments/assets/779744a2-a481-4e2b-b51e-05a094c6a079" />
+
 
 *Figure: `12b_rules_list_two_rules.png`*
 
 **Rules list (both rules)**
 
-![12d_rules_list_http_rule](screenshots/12d_rules_list_http_rule.png)
+<img width="927" height="407" alt="12d_rules_list_http_rule" src="https://github.com/user-attachments/assets/2227c176-0e29-4e7c-8d05-6b697eadf8c6" />
 
 *Figure: `12d_rules_list_http_rule.png`*
 
 **HTTP test**
 
-![13_http_test_after_rule_creation](screenshots/13_http_test_after_rule_creation.png)
+<img width="923" height="416" alt="13_http_test_after_rule_creation" src="https://github.com/user-attachments/assets/5b771caf-a835-4f2f-97a8-b3141956f428" />
+
 
 *Figure: `13_http_test_after_rule_creation.png`*
 
 **HTTPS test**
 
-![14_https_still_working_after_http_block](screenshots/14_https_still_working_after_http_block.png)
+<img width="925" height="383" alt="14_https_still_working_after_http_block" src="https://github.com/user-attachments/assets/ab05305e-37d8-4f6d-8e0e-2ef75b9e152b" />
+
 
 *Figure: `14_https_still_working_after_http_block.png`*
 
@@ -275,7 +301,8 @@ Reviewed via **Firewall → Log Files → Live View**.
 
 **Live View**
 
-![15_firewall_live_view](screenshots/15_firewall_live_view.png)
+<img width="929" height="419" alt="15_firewall_live_view" src="https://github.com/user-attachments/assets/82486647-8d8f-46c2-baa9-7c0c6593c351" />
+
 
 *Figure: `15_firewall_live_view.png`*
 
@@ -286,7 +313,8 @@ Both lab rules were disabled (greyed out in the rule list) and the changes appli
 
 **Rules disabled**
 
-![16_connectivity_restored_rules_disabled](screenshots/16_connectivity_restored_rules_disabled.png)
+<img width="931" height="404" alt="16_connectivity_restored_rules_disabled" src="https://github.com/user-attachments/assets/4c6bef4e-30f0-489b-a1e6-9a7db4e0ed2b" />
+
 
 *Figure: `16_connectivity_restored_rules_disabled.png`*
 
