@@ -13,7 +13,6 @@ Hands-on lab for **WADF105 – Network Security Fundamentals** (ICDFA Fellowship
 | **Module** | WADF105 Network Security Fundamentals |
 | **Lab** | Lab 02 – OPNsense Policy Logging and Packet Analysis |
 
-> Full write-up: **[REPORT.md](REPORT.md)** · Evidence: **[screenshots/](screenshots/)**
 
 ---
 
