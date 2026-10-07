@@ -44,13 +44,29 @@ OPNsense acted as the gateway and security device; the Ubuntu client generated t
 
 ### Environment verification
 
-| Firewall console (before restore) | Firewall LAN/WAN restored |
-|---|---|
-| ![](screenshots/00a_firewall_console_before_restore.png) | ![](screenshots/00b_firewall_lan_wan_restored.png) |
+**Firewall console (before restore)**
 
-| Client IP | Client → Firewall ping |
-|---|---|
-| ![](screenshots/01_client_ip_verification.png) | ![](screenshots/02_client_to_firewall_ping.png) |
+![00a_firewall_console_before_restore](screenshots/00a_firewall_console_before_restore.png)
+
+*Figure: `00a_firewall_console_before_restore.png`*
+
+**Firewall LAN/WAN restored**
+
+![00b_firewall_lan_wan_restored](screenshots/00b_firewall_lan_wan_restored.png)
+
+*Figure: `00b_firewall_lan_wan_restored.png`*
+
+**Client IP**
+
+![01_client_ip_verification](screenshots/01_client_ip_verification.png)
+
+*Figure: `01_client_ip_verification.png`*
+
+**Client → Firewall ping**
+
+![02_client_to_firewall_ping](screenshots/02_client_to_firewall_ping.png)
+
+*Figure: `02_client_to_firewall_ping.png`*
 
 ## 4. Procedure
 
@@ -75,39 +91,97 @@ OPNsense acted as the gateway and security device; the Ubuntu client generated t
 | HTTP | `curl -I http://example.com` | `HTTP/1.1 200 OK` | PASS |
 | HTTPS | `curl -I https://example.com` | `HTTP/2 200` | PASS |
 
-| ICMP | DNS |
-|---|---|
-| ![](screenshots/03_baseline_icmp.png) | ![](screenshots/04_baseline_dns.png) |
+**ICMP**
 
-| HTTP | HTTPS |
-|---|---|
-| ![](screenshots/05_baseline_http.png) | ![](screenshots/06_baseline_https.png) |
+![03_baseline_icmp](screenshots/03_baseline_icmp.png)
+
+*Figure: `03_baseline_icmp.png`*
+
+**DNS**
+
+![04_baseline_dns](screenshots/04_baseline_dns.png)
+
+*Figure: `04_baseline_dns.png`*
+
+**HTTP**
+
+![05_baseline_http](screenshots/05_baseline_http.png)
+
+*Figure: `05_baseline_http.png`*
+
+**HTTPS**
+
+![06_baseline_https](screenshots/06_baseline_https.png)
+
+*Figure: `06_baseline_https.png`*
 
 ### 5.2 ICMP block rule
 
 Rule `LAB2 BLOCK ICMP TO 1.1.1.1`: **Action** Block, **Interface** LAN, **Direction** In, **Protocol** ICMP, **Source** LAN network, **Destination** `1.1.1.1`, **Log** enabled.
 
-| Login | Dashboard |
-|---|---|
-| ![](screenshots/07a_opnsense_login.png) | ![](screenshots/07b_opnsense_dashboard.png) |
+**Login**
 
-![Default LAN rules](screenshots/07c_firewall_rules_default.png)
+![07a_opnsense_login](screenshots/07a_opnsense_login.png)
 
-| Rule: organisation | Rule: filter |
-|---|---|
-| ![](screenshots/07d_icmp_rule_organisation.png) | ![](screenshots/07e_icmp_rule_filter.png) |
+*Figure: `07a_opnsense_login.png`*
 
-| Rule: destination lookup | Rule: destination set |
-|---|---|
-| ![](screenshots/07f_icmp_rule_destination_lookup.png) | ![](screenshots/08b_icmp_rule_destination_set.png) |
+**Dashboard**
 
-![Rule list pending apply](screenshots/07g_icmp_rule_list_pending_apply.png)
+![07b_opnsense_dashboard](screenshots/07b_opnsense_dashboard.png)
+
+*Figure: `07b_opnsense_dashboard.png`*
+
+**Default LAN rules**
+
+![07c_firewall_rules_default](screenshots/07c_firewall_rules_default.png)
+
+*Figure: `07c_firewall_rules_default.png`*
+
+
+**Rule: organisation**
+
+![07d_icmp_rule_organisation](screenshots/07d_icmp_rule_organisation.png)
+
+*Figure: `07d_icmp_rule_organisation.png`*
+
+**Rule: filter**
+
+![07e_icmp_rule_filter](screenshots/07e_icmp_rule_filter.png)
+
+*Figure: `07e_icmp_rule_filter.png`*
+
+**Rule: destination lookup**
+
+![07f_icmp_rule_destination_lookup](screenshots/07f_icmp_rule_destination_lookup.png)
+
+*Figure: `07f_icmp_rule_destination_lookup.png`*
+
+**Rule: destination set**
+
+![08b_icmp_rule_destination_set](screenshots/08b_icmp_rule_destination_set.png)
+
+*Figure: `08b_icmp_rule_destination_set.png`*
+
+**Rule list pending apply**
+
+![07g_icmp_rule_list_pending_apply](screenshots/07g_icmp_rule_list_pending_apply.png)
+
+*Figure: `07g_icmp_rule_list_pending_apply.png`*
+
 
 Ping tests while the rule was being configured (before the change was applied) still succeeded:
 
-| Test 1 | Test 2 |
-|---|---|
-| ![](screenshots/08a_icmp_test_after_rule_creation.png) | ![](screenshots/08c_icmp_retest.png) |
+**Test 1**
+
+![08a_icmp_test_after_rule_creation](screenshots/08a_icmp_test_after_rule_creation.png)
+
+*Figure: `08a_icmp_test_after_rule_creation.png`*
+
+**Test 2**
+
+![08c_icmp_retest](screenshots/08c_icmp_retest.png)
+
+*Figure: `08c_icmp_retest.png`*
 
 After the change was applied:
 
@@ -116,19 +190,40 @@ ping -c 4 1.1.1.1
 4 packets transmitted, 0 received, +4 errors, 100% packet loss
 ```
 
-![ICMP blocked](screenshots/09_icmp_block_verification.png)
+**ICMP blocked**
+
+![09_icmp_block_verification](screenshots/09_icmp_block_verification.png)
+
+*Figure: `09_icmp_block_verification.png`*
+
 
 **Status: PASS** – ICMP to `1.1.1.1` was blocked.
 
 ### 5.3 DNS and HTTPS after the ICMP rule
 
-| DNS (SERVFAIL observed, see §7) | DNS (resolved) |
-|---|---|
-| ![](screenshots/10a_dns_servfail_observed.png) | ![](screenshots/10b_dns_still_working.png) |
+**DNS (SERVFAIL observed, see §7)**
 
-| DNS / HTTPS recheck | HTTPS |
-|---|---|
-| ![](screenshots/10c_dns_https_recheck.png) | ![](screenshots/11_https_still_working.png) |
+![10a_dns_servfail_observed](screenshots/10a_dns_servfail_observed.png)
+
+*Figure: `10a_dns_servfail_observed.png`*
+
+**DNS (resolved)**
+
+![10b_dns_still_working](screenshots/10b_dns_still_working.png)
+
+*Figure: `10b_dns_still_working.png`*
+
+**DNS / HTTPS recheck**
+
+![10c_dns_https_recheck](screenshots/10c_dns_https_recheck.png)
+
+*Figure: `10c_dns_https_recheck.png`*
+
+**HTTPS**
+
+![11_https_still_working](screenshots/11_https_still_working.png)
+
+*Figure: `11_https_still_working.png`*
 
 DNS resolved and HTTPS returned `HTTP/2 200`, showing the ICMP rule did not affect other protocols. **Status: PASS**
 
@@ -136,17 +231,41 @@ DNS resolved and HTTPS returned `HTTP/2 200`, showing the ICMP rule did not affe
 
 Rule `LAB2 BLOCK OUTBOUND HTTP`: **Action** Block, **Interface** LAN, **Protocol** TCP, **Source** LAN network, **Destination** any, **Destination port** HTTP (80).
 
-| Rule: organisation | Rule: filter (port 80) |
-|---|---|
-| ![](screenshots/12a_http_rule_organisation.png) | ![](screenshots/12c_http_rule_filter_port80.png) |
+**Rule: organisation**
 
-| Rules list | Rules list (both rules) |
-|---|---|
-| ![](screenshots/12b_rules_list_two_rules.png) | ![](screenshots/12d_rules_list_http_rule.png) |
+![12a_http_rule_organisation](screenshots/12a_http_rule_organisation.png)
 
-| HTTP test | HTTPS test |
-|---|---|
-| ![](screenshots/13_http_test_after_rule_creation.png) | ![](screenshots/14_https_still_working_after_http_block.png) |
+*Figure: `12a_http_rule_organisation.png`*
+
+**Rule: filter (port 80)**
+
+![12c_http_rule_filter_port80](screenshots/12c_http_rule_filter_port80.png)
+
+*Figure: `12c_http_rule_filter_port80.png`*
+
+**Rules list**
+
+![12b_rules_list_two_rules](screenshots/12b_rules_list_two_rules.png)
+
+*Figure: `12b_rules_list_two_rules.png`*
+
+**Rules list (both rules)**
+
+![12d_rules_list_http_rule](screenshots/12d_rules_list_http_rule.png)
+
+*Figure: `12d_rules_list_http_rule.png`*
+
+**HTTP test**
+
+![13_http_test_after_rule_creation](screenshots/13_http_test_after_rule_creation.png)
+
+*Figure: `13_http_test_after_rule_creation.png`*
+
+**HTTPS test**
+
+![14_https_still_working_after_http_block](screenshots/14_https_still_working_after_http_block.png)
+
+*Figure: `14_https_still_working_after_http_block.png`*
 
 HTTPS (TCP/443) continued to work. See §7 regarding the HTTP result.
 
@@ -154,13 +273,23 @@ HTTPS (TCP/443) continued to work. See §7 regarding the HTTP result.
 
 Reviewed via **Firewall → Log Files → Live View**.
 
-![Live View](screenshots/15_firewall_live_view.png)
+**Live View**
+
+![15_firewall_live_view](screenshots/15_firewall_live_view.png)
+
+*Figure: `15_firewall_live_view.png`*
+
 
 ### 5.6 Restoration
 
 Both lab rules were disabled (greyed out in the rule list) and the changes applied.
 
-![Rules disabled](screenshots/16_connectivity_restored_rules_disabled.png)
+**Rules disabled**
+
+![16_connectivity_restored_rules_disabled](screenshots/16_connectivity_restored_rules_disabled.png)
+
+*Figure: `16_connectivity_restored_rules_disabled.png`*
+
 
 ## 6. Analysis Questions
 
@@ -212,4 +341,3 @@ Firewall policies were implemented in OPNsense and validated from a Linux client
 | DNS / HTTPS checks | `10a`–`10c`, `11` |
 | HTTP rule | `12a`–`12d`, `13`, `14` |
 | Logging & restore | `15`, `16` |
-
