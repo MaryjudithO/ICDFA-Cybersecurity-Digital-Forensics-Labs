@@ -1,4 +1,4 @@
-# CIP-B101 Lab 1B: PC System Fundamentals, Disk Sectors and Partition Analysis
+ Lab 1B: PC System Fundamentals, Disk Sectors and Partition Analysis
 
 | Item | Details |
 |------|---------|
