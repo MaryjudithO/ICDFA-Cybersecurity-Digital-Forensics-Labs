@@ -69,25 +69,27 @@ Every command above only reads information. No partition was created, formatted,
 
 ### 4.1 System specification
 
-![Figure 1](Screenshots/Lab1B_01_System_Identification_uname_hostnamectl_lsblk.png)
+<img width="1273" height="735" alt="Lab1B_01_System_Identification_uname_hostnamectl_lsblk" src="https://github.com/user-attachments/assets/478deb4e-00cb-404e-827b-eb461d770d50" />
+
 
 *Figure 1: Kernel, platform and disk layout: uname -a, hostnamectl and lsblk.*
 
 **Observation:** The system runs Kali GNU/Linux Rolling with kernel 6.12.13-amd64 on x86-64. hostnamectl reports a VMware virtual machine (chassis: vm). lsblk shows a 25 GB disk (sda) with sda1 (23.7G, mounted at /), sda2 (1K, extended) and sda5 (1.3G, swap).
 
-![Figure 2](Screenshots/Lab1B_02_Memory_and_CPU_free_lscpu.png)
+<img width="1272" height="805" alt="Lab1B_02_Memory_and_CPU_free_lscpu" src="https://github.com/user-attachments/assets/c8fb775d-99a9-4eb8-8a22-63c6313078b8" />
+
 
 *Figure 2: Memory and processor information: free -h and lscpu.*
 
 **Observation:** The system has 1.9 GiB of RAM (779 MiB used, 1.2 GiB available) and 1.3 GiB of swap, with no swap in use. The processor is a single Intel Core i7-10610U at 1.80 GHz, with 1 core and 1 thread.
 
-![Figure 3](Screenshots/Lab1B_03_CPU_Virtualization_Caches_Vulnerabilities_lscpu.png)
+<img width="1287" height="757" alt="Lab1B_03_CPU_Virtualization_Caches_Vulnerabilities_lscpu" src="https://github.com/user-attachments/assets/ed0c8216-fab0-4a40-95c9-a771d107343c" />
 
 *Figure 3: Virtualisation, cache and vulnerability information from lscpu.*
 
 **Observation:** The hypervisor vendor is VMware with full virtualisation. The caches are L1d 32 KiB, L1i 32 KiB, L2 256 KiB and L3 8 MiB. The vulnerability list shows which CPU weaknesses are mitigated, not affected, or dependent on the hypervisor.
 
-![Figure 4](Screenshots/Lab1B_04_Disk_Usage_and_UUIDs_df_blkid.png)
+<img width="1269" height="760" alt="Lab1B_04_Disk_Usage_and_UUIDs_df_blkid" src="https://github.com/user-attachments/assets/7098eb7e-e76f-4874-8f92-9b224a890ee5" />
 
 *Figure 4: Disk usage and identifiers: df -h and blkid (run with sudo).*
 
@@ -112,13 +114,13 @@ Evidence can exist in more than one layer. For example, a downloaded file leaves
 
 ## 5. Part B: Process Investigation
 
-![Figure 5](Screenshots/Lab1B_05_Process_List_ps_aux_and_top.png)
+<img width="1282" height="729" alt="Lab1B_05_Process_List_ps_aux_and_top" src="https://github.com/user-attachments/assets/a8bf0aa5-166f-4fcb-8e84-4080a18996c8" />
 
 *Figure 5: Process list: ps aux | head and top -b -n 1 | head -20.*
 
 **Observation:** The first processes are root-owned kernel and system tasks, starting with PID 1 (/sbin/init splash, which runs systemd).
 
-![Figure 6](Screenshots/Lab1B_06_Process_Monitoring_top_Extended_View.png)
+<img width="1282" height="729" alt="Lab1B_05_Process_List_ps_aux_and_top" src="https://github.com/user-attachments/assets/0e7de89f-fa05-46db-bded-6e70263c206b" />
 
 *Figure 6: Process monitoring: top output with more processes visible.*
 
@@ -150,7 +152,7 @@ Process analysis shows what was happening on a system at the time of examination
 
 ## 6. Part C: Disk Sector and Capacity Calculations
 
-![Figure 7](Screenshots/Lab1B_07_Disk_Geometry_fdisk.png)
+<img width="1297" height="793" alt="Lab1B_07_Disk_Geometry_fdisk" src="https://github.com/user-attachments/assets/da6d26a5-c11b-4c62-9ec3-99d6db2b1e6b" />
 
 *Figure 7: Disk geometry and partition table: sudo fdisk -l.*
 
@@ -206,7 +208,8 @@ The DOS disk label shows the MBR partitioning scheme. The bootable partition is 
 
 ## 7. Part D: Partition Analysis
 
-![Figure 8](Screenshots/Lab1B_08_Partition_Table_parted_and_lsblk_f.png)
+<img width="1266" height="753" alt="Lab1B_08_Partition_Table_parted_and_lsblk_f" src="https://github.com/user-attachments/assets/f5818a6b-de54-49c7-9424-abb0ffa28609" />
+
 
 *Figure 8: Partition table and file systems: sudo parted -l and lsblk -f.*
 
@@ -245,7 +248,8 @@ Partition analysis helps investigators identify storage locations, understand ho
 
 ## 8. Part E: Boot Process, MBR and GPT Concepts
 
-![Figure 9](Screenshots/Lab1B_09_MBR_Verification_fdisk_Disklabel_and_file.png)
+<img width="1288" height="760" alt="Lab1B_09_MBR_Verification_fdisk_Disklabel_and_file" src="https://github.com/user-attachments/assets/277761cd-3d13-4eb2-b916-2c7acbc03144" />
+
 
 *Figure 9: MBR verification: sudo fdisk -l | grep "Disklabel" and sudo file -s /dev/sda.*
 
@@ -291,7 +295,8 @@ The MBR is a critical forensic artifact because malware can modify boot records 
 
 ## 9. Part F: File System Analysis
 
-![Figure 10](Screenshots/Lab1B_10_File_System_Types_df_T_and_mount.png)
+<img width="1294" height="760" alt="Lab1B_10_File_System_Types_df_T_and_mount" src="https://github.com/user-attachments/assets/0e934db0-1f73-40d4-b7fa-e27a85948f3d" />
+
 
 *Figure 10: File system types and mounts: df -T and mount | grep "^/dev".*
 
